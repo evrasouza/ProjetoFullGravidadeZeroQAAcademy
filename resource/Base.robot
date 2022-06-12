@@ -6,9 +6,6 @@ Library    factories/User.py
 
 Resource    Actions.robot
 
-*** Variables ***
-${URL_BASE}        https://getgeeks-evra.herokuapp.com
-
 *** Keywords ***
 Start Session
     New Browser    chromium        headless=false        slowMo=00:00:00.5

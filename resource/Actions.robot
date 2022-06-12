@@ -1,8 +1,11 @@
 *** Settings ***
 Documentation        Ações do Sistema
 
-
 Library    Browser
+
+*** Variables ***
+${URL_BASE}        https://getgeeks-evra.herokuapp.com
+
 
 *** Keywords ***
 Go To Signup form

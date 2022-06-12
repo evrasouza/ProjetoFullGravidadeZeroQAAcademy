@@ -6,7 +6,7 @@ Library    Browser
 
 *** Keywords ***
 Go To Signup form
-    Go To    https://getgeeks-evra.herokuapp.com/signup
+    Go To    ${URL_BASE}/signup
     Wait For Elements State    css=.signup-form        visible        5
 
 Fill Signup Form

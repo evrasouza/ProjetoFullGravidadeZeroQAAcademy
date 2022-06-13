@@ -5,6 +5,8 @@ Library    Browser
 Library    factories/User.py
 
 Resource    Actions.robot
+Resource    Database.robot
+Resource    Helpers.robot
 
 *** Keywords ***
 Start Session

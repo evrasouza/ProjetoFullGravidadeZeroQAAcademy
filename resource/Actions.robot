@@ -6,7 +6,6 @@ Library    Browser
 *** Variables ***
 ${URL_BASE}        https://getgeeks-evra.herokuapp.com
 
-
 *** Keywords ***
 Go To Signup form
     Go To    ${URL_BASE}/signup

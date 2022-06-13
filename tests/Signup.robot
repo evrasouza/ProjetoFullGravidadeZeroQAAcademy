@@ -11,7 +11,6 @@ Register a new user
 
     ##### Cenário: Cadastro de cliente
     ${user}        Factory User
-    Set Suite Variable    ${user}
 
     #Dado que acesso a página de cadastro
     Go To Signup form
@@ -23,8 +22,13 @@ Register a new user
     User Should Be Registered
 
 Duplicate user
+    [Tags]        dup_email
     ##### Cenário: E-mail duplicado
-    
+
+    ${user}        Factory User
+
+    Add user    ${user}
+
     #Dado que acesso a página de cadastro
     Go To Signup form
     #Porem o meu e-mail já foi cadastrado

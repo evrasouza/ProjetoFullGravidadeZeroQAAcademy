@@ -33,4 +33,4 @@ Duplicate user
     #Quando faço o meu cadastro com o nome completo, e-mail e senha
     #Então vejo a mensagem de alerta:
         #"Oops! Já temos um usuário com o e-mail informado."
-    Modal Content Should Be    Oops! Já temos um usuário com o e-mail informado.
+    Modal Content Should Be    Já temos um usuário com o e-mail informado.

@@ -1,14 +1,15 @@
 *** Settings ***
 Documentation        Test Helpers
 
-Library     factories/User.py
-Resource    Actions.robot
+Resource    ../resource/Database.robot
 
 *** Keywords ***
-Add user
+Add User From Database
     [Arguments]    ${user}
+    
+    Connect To Postgress
+    Insert User    ${user}
+    Disconnect From Database
 
-    Go To Signup form
-    Fill Signup Form    ${user}
-    Submit Signup Form
-    User Should Be Registered
+    
+

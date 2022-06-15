@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0 (Python 3.9.5 on win32)" generated="20220615 19:30:16.435" rpa="false" schemaversion="3">
-<suite id="s1" name="Signup" source="C:\projects\ROBOT\GravidadeZero\project\tests\Signup.robot">
-<test id="s1-t1" name="Required Fields" line="41">
-<kw name="Start Session" library="Base" type="SETUP">
+<robot generator="Robot 5.0 (Python 3.9.5 on win32)" generated="20220615 19:43:52.709" rpa="false" schemaversion="3">
+<suite id="s1" name="SignupRequired" source="C:\projects\ROBOT\GravidadeZero\project\tests\SignupRequired.robot">
+<kw name="Signup Without Fill Form" type="SETUP">
+<kw name="Start Session" library="Base">
 <kw name="New Browser" library="Browser">
 <arg>chromium</arg>
 <arg>headless=false</arg>
@@ -10,56 +10,57 @@
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Create a new playwright Browser with specified options.</doc>
-<msg timestamp="20220615 19:30:17.292" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 500.0, "tracesDir": "C:\\projects\\ROBOT\\GravidadeZero\\project\\logs\\browser\\traces\\88361d80-86ed-40cb-9d97-a5ab7f61b89f"}</msg>
-<msg timestamp="20220615 19:30:17.537" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":500,"tracesDir":"C:\\projects\\ROBOT\\GravidadeZero\\project\\logs\\browser\\traces\\88361d80-86ed-40cb-9d97-a5ab7f61b89f"}</msg>
-<status status="PASS" starttime="20220615 19:30:17.291" endtime="20220615 19:30:17.537"/>
+<msg timestamp="20220615 19:43:53.571" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 500.0, "tracesDir": "C:\\projects\\ROBOT\\GravidadeZero\\project\\logs\\browser\\traces\\505750af-7637-4363-8030-95547fd58d1d"}</msg>
+<msg timestamp="20220615 19:43:53.809" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":500,"tracesDir":"C:\\projects\\ROBOT\\GravidadeZero\\project\\logs\\browser\\traces\\505750af-7637-4363-8030-95547fd58d1d"}</msg>
+<status status="PASS" starttime="20220615 19:43:53.570" endtime="20220615 19:43:53.809"/>
 </kw>
 <kw name="New Page" library="Browser">
 <arg>${URL_BASE}</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Open a new Page.</doc>
-<msg timestamp="20220615 19:30:25.403" level="INFO">Successfully initialized new page object and opened url: https://getgeeks-evra.herokuapp.com</msg>
-<msg timestamp="20220615 19:30:25.403" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
-<status status="PASS" starttime="20220615 19:30:17.537" endtime="20220615 19:30:25.403"/>
+<msg timestamp="20220615 19:43:56.438" level="INFO">Successfully initialized new page object and opened url: https://getgeeks-evra.herokuapp.com</msg>
+<msg timestamp="20220615 19:43:56.438" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20220615 19:43:53.809" endtime="20220615 19:43:56.438"/>
 </kw>
-<status status="PASS" starttime="20220615 19:30:17.291" endtime="20220615 19:30:25.403"/>
+<status status="PASS" starttime="20220615 19:43:53.570" endtime="20220615 19:43:56.438"/>
 </kw>
-<kw name="Signup Subbmmit Without Form">
+<kw name="Go To Signup form" library="Actions">
+<kw name="Go To" library="Browser">
+<arg>${URL_BASE}/signup</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<msg timestamp="20220615 19:43:57.772" level="INFO">Successfully opened URL https://getgeeks-evra.herokuapp.com/signup</msg>
+<status status="PASS" starttime="20220615 19:43:56.438" endtime="20220615 19:43:57.772"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=.signup-form</arg>
+<arg>visible</arg>
+<arg>5</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220615 19:43:57.800" level="INFO">Waited for Element with selector css=.signup-form at state visible</msg>
+<status status="PASS" starttime="20220615 19:43:57.772" endtime="20220615 19:43:57.800"/>
+</kw>
+<status status="PASS" starttime="20220615 19:43:56.438" endtime="20220615 19:43:57.800"/>
+</kw>
+<kw name="Submit Signup Form" library="Actions">
+<kw name="Click" library="Browser">
+<arg>css=.submit-button &gt;&gt; text=Cadastrar</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220615 19:43:57.800" endtime="20220615 19:43:58.355"/>
+</kw>
+<status status="PASS" starttime="20220615 19:43:57.800" endtime="20220615 19:43:58.355"/>
+</kw>
+<status status="PASS" starttime="20220615 19:43:53.569" endtime="20220615 19:43:58.355"/>
+</kw>
+<test id="s1-t1" name="Name is Required" line="11">
+<kw name="Alert span Should Be" library="Actions">
 <arg>Cadê o seu nome?</arg>
-<kw name="Go To Signup form" library="Actions">
-<kw name="Go To" library="Browser">
-<arg>${URL_BASE}/signup</arg>
-<tag>BrowserControl</tag>
-<tag>Setter</tag>
-<doc>Navigates to the given ``url``.</doc>
-<msg timestamp="20220615 19:30:26.715" level="INFO">Successfully opened URL https://getgeeks-evra.herokuapp.com/signup</msg>
-<status status="PASS" starttime="20220615 19:30:25.405" endtime="20220615 19:30:26.715"/>
-</kw>
-<kw name="Wait For Elements State" library="Browser">
-<arg>css=.signup-form</arg>
-<arg>visible</arg>
-<arg>5</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20220615 19:30:26.739" level="INFO">Waited for Element with selector css=.signup-form at state visible</msg>
-<status status="PASS" starttime="20220615 19:30:26.715" endtime="20220615 19:30:26.739"/>
-</kw>
-<status status="PASS" starttime="20220615 19:30:25.405" endtime="20220615 19:30:26.739"/>
-</kw>
-<kw name="Submit Signup Form" library="Actions">
-<kw name="Click" library="Browser">
-<arg>css=.submit-button &gt;&gt; text=Cadastrar</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" starttime="20220615 19:30:26.739" endtime="20220615 19:30:27.326"/>
-</kw>
-<status status="PASS" starttime="20220615 19:30:26.739" endtime="20220615 19:30:27.326"/>
-</kw>
-<kw name="Alert span Should Be" library="Actions">
-<arg>${expected_alert}</arg>
 <kw name="Wait For Elements State" library="Browser">
 <arg>css=span[class=error] &gt;&gt; text=${expect_alert}</arg>
 <arg>visible</arg>
@@ -67,48 +68,16 @@
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20220615 19:30:27.326" level="INFO">Waited for Element with selector css=span[class=error] &gt;&gt; text=Cadê o seu nome? at state visible</msg>
-<status status="PASS" starttime="20220615 19:30:27.326" endtime="20220615 19:30:27.326"/>
+<msg timestamp="20220615 19:43:58.371" level="INFO">Waited for Element with selector css=span[class=error] &gt;&gt; text=Cadê o seu nome? at state visible</msg>
+<status status="PASS" starttime="20220615 19:43:58.371" endtime="20220615 19:43:58.371"/>
 </kw>
-<status status="PASS" starttime="20220615 19:30:27.326" endtime="20220615 19:30:27.335"/>
+<status status="PASS" starttime="20220615 19:43:58.371" endtime="20220615 19:43:58.371"/>
 </kw>
-<status status="PASS" starttime="20220615 19:30:25.405" endtime="20220615 19:30:27.335"/>
-</kw>
-<kw name="Signup Subbmmit Without Form">
-<arg>E o sobrenome?</arg>
-<kw name="Go To Signup form" library="Actions">
-<kw name="Go To" library="Browser">
-<arg>${URL_BASE}/signup</arg>
-<tag>BrowserControl</tag>
-<tag>Setter</tag>
-<doc>Navigates to the given ``url``.</doc>
-<msg timestamp="20220615 19:30:28.351" level="INFO">Successfully opened URL https://getgeeks-evra.herokuapp.com/signup</msg>
-<status status="PASS" starttime="20220615 19:30:27.335" endtime="20220615 19:30:28.351"/>
-</kw>
-<kw name="Wait For Elements State" library="Browser">
-<arg>css=.signup-form</arg>
-<arg>visible</arg>
-<arg>5</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20220615 19:30:28.363" level="INFO">Waited for Element with selector css=.signup-form at state visible</msg>
-<status status="PASS" starttime="20220615 19:30:28.351" endtime="20220615 19:30:28.363"/>
-</kw>
-<status status="PASS" starttime="20220615 19:30:27.335" endtime="20220615 19:30:28.363"/>
-</kw>
-<kw name="Submit Signup Form" library="Actions">
-<kw name="Click" library="Browser">
-<arg>css=.submit-button &gt;&gt; text=Cadastrar</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" starttime="20220615 19:30:28.364" endtime="20220615 19:30:28.925"/>
-</kw>
-<status status="PASS" starttime="20220615 19:30:28.364" endtime="20220615 19:30:28.935"/>
-</kw>
+<status status="PASS" starttime="20220615 19:43:58.355" endtime="20220615 19:43:58.371"/>
+</test>
+<test id="s1-t2" name="LasteName is Required" line="14">
 <kw name="Alert span Should Be" library="Actions">
-<arg>${expected_alert}</arg>
+<arg>Cadê o sobrenome?</arg>
 <kw name="Wait For Elements State" library="Browser">
 <arg>css=span[class=error] &gt;&gt; text=${expect_alert}</arg>
 <arg>visible</arg>
@@ -116,48 +85,23 @@
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20220615 19:30:28.945" level="INFO">Waited for Element with selector css=span[class=error] &gt;&gt; text=E o sobrenome? at state visible</msg>
-<status status="PASS" starttime="20220615 19:30:28.935" endtime="20220615 19:30:28.945"/>
+<msg timestamp="20220615 19:44:03.588" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-1.png"&gt;&lt;img src="browser/screenshot/fail-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220615 19:44:03.589" level="FAIL">TimeoutError: locator.waitFor: Timeout 5000ms exceeded.
+=========================== logs ===========================
+waiting for selector "css=span[class=error] &gt;&gt; text=Cadê o sobrenome?" to be visible
+============================================================</msg>
+<status status="FAIL" starttime="20220615 19:43:58.371" endtime="20220615 19:44:03.590"/>
 </kw>
-<status status="PASS" starttime="20220615 19:30:28.935" endtime="20220615 19:30:28.945"/>
+<status status="FAIL" starttime="20220615 19:43:58.371" endtime="20220615 19:44:03.591"/>
 </kw>
-<status status="PASS" starttime="20220615 19:30:27.335" endtime="20220615 19:30:28.945"/>
-</kw>
-<kw name="Signup Subbmmit Without Form">
+<status status="FAIL" starttime="20220615 19:43:58.371" endtime="20220615 19:44:03.592">TimeoutError: locator.waitFor: Timeout 5000ms exceeded.
+=========================== logs ===========================
+waiting for selector "css=span[class=error] &gt;&gt; text=Cadê o sobrenome?" to be visible
+============================================================</status>
+</test>
+<test id="s1-t3" name="Email is Required" line="17">
+<kw name="Alert span Should Be" library="Actions">
 <arg>O email é importante também!</arg>
-<kw name="Go To Signup form" library="Actions">
-<kw name="Go To" library="Browser">
-<arg>${URL_BASE}/signup</arg>
-<tag>BrowserControl</tag>
-<tag>Setter</tag>
-<doc>Navigates to the given ``url``.</doc>
-<msg timestamp="20220615 19:30:29.975" level="INFO">Successfully opened URL https://getgeeks-evra.herokuapp.com/signup</msg>
-<status status="PASS" starttime="20220615 19:30:28.945" endtime="20220615 19:30:29.975"/>
-</kw>
-<kw name="Wait For Elements State" library="Browser">
-<arg>css=.signup-form</arg>
-<arg>visible</arg>
-<arg>5</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20220615 19:30:30.020" level="INFO">Waited for Element with selector css=.signup-form at state visible</msg>
-<status status="PASS" starttime="20220615 19:30:29.975" endtime="20220615 19:30:30.021"/>
-</kw>
-<status status="PASS" starttime="20220615 19:30:28.945" endtime="20220615 19:30:30.021"/>
-</kw>
-<kw name="Submit Signup Form" library="Actions">
-<kw name="Click" library="Browser">
-<arg>css=.submit-button &gt;&gt; text=Cadastrar</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" starttime="20220615 19:30:30.021" endtime="20220615 19:30:30.568"/>
-</kw>
-<status status="PASS" starttime="20220615 19:30:30.021" endtime="20220615 19:30:30.568"/>
-</kw>
-<kw name="Alert span Should Be" library="Actions">
-<arg>${expected_alert}</arg>
 <kw name="Wait For Elements State" library="Browser">
 <arg>css=span[class=error] &gt;&gt; text=${expect_alert}</arg>
 <arg>visible</arg>
@@ -165,48 +109,16 @@
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20220615 19:30:30.568" level="INFO">Waited for Element with selector css=span[class=error] &gt;&gt; text=O email é importante também! at state visible</msg>
-<status status="PASS" starttime="20220615 19:30:30.568" endtime="20220615 19:30:30.568"/>
+<msg timestamp="20220615 19:44:03.607" level="INFO">Waited for Element with selector css=span[class=error] &gt;&gt; text=O email é importante também! at state visible</msg>
+<status status="PASS" starttime="20220615 19:44:03.600" endtime="20220615 19:44:03.607"/>
 </kw>
-<status status="PASS" starttime="20220615 19:30:30.568" endtime="20220615 19:30:30.568"/>
+<status status="PASS" starttime="20220615 19:44:03.600" endtime="20220615 19:44:03.607"/>
 </kw>
-<status status="PASS" starttime="20220615 19:30:28.945" endtime="20220615 19:30:30.568"/>
-</kw>
-<kw name="Signup Subbmmit Without Form">
+<status status="PASS" starttime="20220615 19:44:03.596" endtime="20220615 19:44:03.607"/>
+</test>
+<test id="s1-t4" name="Password is Required" line="20">
+<kw name="Alert span Should Be" library="Actions">
 <arg>Agora só falta a senha!</arg>
-<kw name="Go To Signup form" library="Actions">
-<kw name="Go To" library="Browser">
-<arg>${URL_BASE}/signup</arg>
-<tag>BrowserControl</tag>
-<tag>Setter</tag>
-<doc>Navigates to the given ``url``.</doc>
-<msg timestamp="20220615 19:30:31.596" level="INFO">Successfully opened URL https://getgeeks-evra.herokuapp.com/signup</msg>
-<status status="PASS" starttime="20220615 19:30:30.575" endtime="20220615 19:30:31.596"/>
-</kw>
-<kw name="Wait For Elements State" library="Browser">
-<arg>css=.signup-form</arg>
-<arg>visible</arg>
-<arg>5</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20220615 19:30:31.605" level="INFO">Waited for Element with selector css=.signup-form at state visible</msg>
-<status status="PASS" starttime="20220615 19:30:31.596" endtime="20220615 19:30:31.605"/>
-</kw>
-<status status="PASS" starttime="20220615 19:30:30.575" endtime="20220615 19:30:31.605"/>
-</kw>
-<kw name="Submit Signup Form" library="Actions">
-<kw name="Click" library="Browser">
-<arg>css=.submit-button &gt;&gt; text=Cadastrar</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" starttime="20220615 19:30:31.605" endtime="20220615 19:30:32.165"/>
-</kw>
-<status status="PASS" starttime="20220615 19:30:31.605" endtime="20220615 19:30:32.165"/>
-</kw>
-<kw name="Alert span Should Be" library="Actions">
-<arg>${expected_alert}</arg>
 <kw name="Wait For Elements State" library="Browser">
 <arg>css=span[class=error] &gt;&gt; text=${expect_alert}</arg>
 <arg>visible</arg>
@@ -214,39 +126,33 @@
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20220615 19:30:32.175" level="INFO">Waited for Element with selector css=span[class=error] &gt;&gt; text=Agora só falta a senha! at state visible</msg>
-<status status="PASS" starttime="20220615 19:30:32.165" endtime="20220615 19:30:32.175"/>
+<msg timestamp="20220615 19:44:03.619" level="INFO">Waited for Element with selector css=span[class=error] &gt;&gt; text=Agora só falta a senha! at state visible</msg>
+<status status="PASS" starttime="20220615 19:44:03.614" endtime="20220615 19:44:03.619"/>
 </kw>
-<status status="PASS" starttime="20220615 19:30:32.165" endtime="20220615 19:30:32.175"/>
+<status status="PASS" starttime="20220615 19:44:03.613" endtime="20220615 19:44:03.619"/>
 </kw>
-<status status="PASS" starttime="20220615 19:30:30.575" endtime="20220615 19:30:32.175"/>
-</kw>
+<status status="PASS" starttime="20220615 19:44:03.610" endtime="20220615 19:44:03.620"/>
+</test>
 <kw name="Finish Session" library="Base" type="TEARDOWN">
 <kw name="Take Screenshot" library="Browser">
 <tag>PageContent</tag>
 <doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
-<msg timestamp="20220615 19:30:32.336" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220615 19:30:32.175" endtime="20220615 19:30:32.336"/>
+<msg timestamp="20220615 19:44:03.808" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220615 19:44:03.623" endtime="20220615 19:44:03.808"/>
 </kw>
-<status status="PASS" starttime="20220615 19:30:32.175" endtime="20220615 19:30:32.336"/>
+<status status="PASS" starttime="20220615 19:44:03.623" endtime="20220615 19:44:03.809"/>
 </kw>
-<tag>attempt_signup</tag>
-<tag>rr_fields</tag>
-<status status="PASS" starttime="20220615 19:30:17.288" endtime="20220615 19:30:32.336"/>
-</test>
-<doc>Signup Test Suite</doc>
-<status status="PASS" starttime="20220615 19:30:16.436" endtime="20220615 19:30:32.382"/>
+<doc>Signup Reqquired Test Suite</doc>
+<status status="FAIL" starttime="20220615 19:43:52.710" endtime="20220615 19:44:03.809"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="3" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">attempt_signup</stat>
-<stat pass="1" fail="0" skip="0">rr_fields</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Signup">Signup</stat>
+<stat pass="3" fail="1" skip="0" id="s1" name="SignupRequired">SignupRequired</stat>
 </suite>
 </statistics>
 <errors>

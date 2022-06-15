@@ -1,158 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0 (Python 3.9.5 on win32)" generated="20220615 19:43:52.709" rpa="false" schemaversion="3">
-<suite id="s1" name="SignupRequired" source="C:\projects\ROBOT\GravidadeZero\project\tests\SignupRequired.robot">
-<kw name="Signup Without Fill Form" type="SETUP">
-<kw name="Start Session" library="Base">
-<kw name="New Browser" library="Browser">
-<arg>chromium</arg>
-<arg>headless=false</arg>
-<arg>slowMo=00:00:00.5</arg>
-<tag>BrowserControl</tag>
-<tag>Setter</tag>
-<doc>Create a new playwright Browser with specified options.</doc>
-<msg timestamp="20220615 19:43:53.571" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 500.0, "tracesDir": "C:\\projects\\ROBOT\\GravidadeZero\\project\\logs\\browser\\traces\\505750af-7637-4363-8030-95547fd58d1d"}</msg>
-<msg timestamp="20220615 19:43:53.809" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":500,"tracesDir":"C:\\projects\\ROBOT\\GravidadeZero\\project\\logs\\browser\\traces\\505750af-7637-4363-8030-95547fd58d1d"}</msg>
-<status status="PASS" starttime="20220615 19:43:53.570" endtime="20220615 19:43:53.809"/>
+<robot generator="Robot 5.0 (Python 3.9.5 on win32)" generated="20220615 19:56:13.400" rpa="false" schemaversion="3">
+<suite id="s1" name="Temp" source="C:\projects\ROBOT\GravidadeZero\project\tests\Temp.robot">
+<test id="s1-t1" name="Trabalhando com Listas" line="6">
+<kw name="Create List" library="BuiltIn">
+<var>@{avengers}</var>
+<arg>Tony Stark</arg>
+<arg>Kamalakhan</arg>
+<arg>Steve Rogers</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20220615 19:56:13.425" level="INFO">@{avengers} = [ Tony Stark | Kamalakhan | Steve Rogers ]</msg>
+<status status="PASS" starttime="20220615 19:56:13.425" endtime="20220615 19:56:13.425"/>
 </kw>
-<kw name="New Page" library="Browser">
-<arg>${URL_BASE}</arg>
-<tag>BrowserControl</tag>
-<tag>Setter</tag>
-<doc>Open a new Page.</doc>
-<msg timestamp="20220615 19:43:56.438" level="INFO">Successfully initialized new page object and opened url: https://getgeeks-evra.herokuapp.com</msg>
-<msg timestamp="20220615 19:43:56.438" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
-<status status="PASS" starttime="20220615 19:43:53.809" endtime="20220615 19:43:56.438"/>
+<kw name="Append To List" library="Collections">
+<arg>${avengers}</arg>
+<arg>Bruce Banner</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220615 19:56:13.425" endtime="20220615 19:56:13.425"/>
 </kw>
-<status status="PASS" starttime="20220615 19:43:53.570" endtime="20220615 19:43:56.438"/>
+<kw name="Append To List" library="Collections">
+<arg>${avengers}</arg>
+<arg>Scot Lang</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220615 19:56:13.426" endtime="20220615 19:56:13.426"/>
 </kw>
-<kw name="Go To Signup form" library="Actions">
-<kw name="Go To" library="Browser">
-<arg>${URL_BASE}/signup</arg>
-<tag>BrowserControl</tag>
-<tag>Setter</tag>
-<doc>Navigates to the given ``url``.</doc>
-<msg timestamp="20220615 19:43:57.772" level="INFO">Successfully opened URL https://getgeeks-evra.herokuapp.com/signup</msg>
-<status status="PASS" starttime="20220615 19:43:56.438" endtime="20220615 19:43:57.772"/>
+<for flavor="IN">
+<var>${a}</var>
+<value>@{avengers}</value>
+<iter>
+<var name="${a}">Tony Stark</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${avengers}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220615 19:56:13.426" endtime="20220615 19:56:13.427"/>
 </kw>
-<kw name="Wait For Elements State" library="Browser">
-<arg>css=.signup-form</arg>
-<arg>visible</arg>
-<arg>5</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20220615 19:43:57.800" level="INFO">Waited for Element with selector css=.signup-form at state visible</msg>
-<status status="PASS" starttime="20220615 19:43:57.772" endtime="20220615 19:43:57.800"/>
+<status status="PASS" starttime="20220615 19:56:13.426" endtime="20220615 19:56:13.427"/>
+</iter>
+<iter>
+<var name="${a}">Kamalakhan</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${avengers}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220615 19:56:13.427" endtime="20220615 19:56:13.427"/>
 </kw>
-<status status="PASS" starttime="20220615 19:43:56.438" endtime="20220615 19:43:57.800"/>
+<status status="PASS" starttime="20220615 19:56:13.427" endtime="20220615 19:56:13.427"/>
+</iter>
+<iter>
+<var name="${a}">Steve Rogers</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${avengers}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220615 19:56:13.427" endtime="20220615 19:56:13.427"/>
 </kw>
-<kw name="Submit Signup Form" library="Actions">
-<kw name="Click" library="Browser">
-<arg>css=.submit-button &gt;&gt; text=Cadastrar</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" starttime="20220615 19:43:57.800" endtime="20220615 19:43:58.355"/>
+<status status="PASS" starttime="20220615 19:56:13.427" endtime="20220615 19:56:13.427"/>
+</iter>
+<iter>
+<var name="${a}">Bruce Banner</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${avengers}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220615 19:56:13.428" endtime="20220615 19:56:13.428"/>
 </kw>
-<status status="PASS" starttime="20220615 19:43:57.800" endtime="20220615 19:43:58.355"/>
+<status status="PASS" starttime="20220615 19:56:13.428" endtime="20220615 19:56:13.428"/>
+</iter>
+<iter>
+<var name="${a}">Scot Lang</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${avengers}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220615 19:56:13.428" endtime="20220615 19:56:13.428"/>
 </kw>
-<status status="PASS" starttime="20220615 19:43:53.569" endtime="20220615 19:43:58.355"/>
+<status status="PASS" starttime="20220615 19:56:13.428" endtime="20220615 19:56:13.428"/>
+</iter>
+<status status="PASS" starttime="20220615 19:56:13.426" endtime="20220615 19:56:13.428"/>
+</for>
+<kw name="Create List" library="BuiltIn">
+<var>@{avengers2}</var>
+<arg>Tony Stark</arg>
+<arg>Miss Marvel</arg>
+<arg>Steve Rogers</arg>
+<arg>Bruce Banner</arg>
+<arg>Scot Lang</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20220615 19:56:13.428" level="INFO">@{avengers2} = [ Tony Stark | Miss Marvel | Steve Rogers | Bruce Banner | Scot Lang ]</msg>
+<status status="PASS" starttime="20220615 19:56:13.428" endtime="20220615 19:56:13.428"/>
 </kw>
-<test id="s1-t1" name="Name is Required" line="11">
-<kw name="Alert span Should Be" library="Actions">
-<arg>Cadê o seu nome?</arg>
-<kw name="Wait For Elements State" library="Browser">
-<arg>css=span[class=error] &gt;&gt; text=${expect_alert}</arg>
-<arg>visible</arg>
-<arg>5</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20220615 19:43:58.371" level="INFO">Waited for Element with selector css=span[class=error] &gt;&gt; text=Cadê o seu nome? at state visible</msg>
-<status status="PASS" starttime="20220615 19:43:58.371" endtime="20220615 19:43:58.371"/>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${avengers}</arg>
+<arg>${avengers2}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<msg timestamp="20220615 19:56:13.429" level="FAIL">Lists are different:
+Index 1: Kamalakhan != Miss Marvel</msg>
+<status status="FAIL" starttime="20220615 19:56:13.429" endtime="20220615 19:56:13.429"/>
 </kw>
-<status status="PASS" starttime="20220615 19:43:58.371" endtime="20220615 19:43:58.371"/>
-</kw>
-<status status="PASS" starttime="20220615 19:43:58.355" endtime="20220615 19:43:58.371"/>
+<status status="FAIL" starttime="20220615 19:56:13.424" endtime="20220615 19:56:13.430">Lists are different:
+Index 1: Kamalakhan != Miss Marvel</status>
 </test>
-<test id="s1-t2" name="LasteName is Required" line="14">
-<kw name="Alert span Should Be" library="Actions">
-<arg>Cadê o sobrenome?</arg>
-<kw name="Wait For Elements State" library="Browser">
-<arg>css=span[class=error] &gt;&gt; text=${expect_alert}</arg>
-<arg>visible</arg>
-<arg>5</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20220615 19:44:03.588" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-1.png"&gt;&lt;img src="browser/screenshot/fail-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20220615 19:44:03.589" level="FAIL">TimeoutError: locator.waitFor: Timeout 5000ms exceeded.
-=========================== logs ===========================
-waiting for selector "css=span[class=error] &gt;&gt; text=Cadê o sobrenome?" to be visible
-============================================================</msg>
-<status status="FAIL" starttime="20220615 19:43:58.371" endtime="20220615 19:44:03.590"/>
-</kw>
-<status status="FAIL" starttime="20220615 19:43:58.371" endtime="20220615 19:44:03.591"/>
-</kw>
-<status status="FAIL" starttime="20220615 19:43:58.371" endtime="20220615 19:44:03.592">TimeoutError: locator.waitFor: Timeout 5000ms exceeded.
-=========================== logs ===========================
-waiting for selector "css=span[class=error] &gt;&gt; text=Cadê o sobrenome?" to be visible
-============================================================</status>
-</test>
-<test id="s1-t3" name="Email is Required" line="17">
-<kw name="Alert span Should Be" library="Actions">
-<arg>O email é importante também!</arg>
-<kw name="Wait For Elements State" library="Browser">
-<arg>css=span[class=error] &gt;&gt; text=${expect_alert}</arg>
-<arg>visible</arg>
-<arg>5</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20220615 19:44:03.607" level="INFO">Waited for Element with selector css=span[class=error] &gt;&gt; text=O email é importante também! at state visible</msg>
-<status status="PASS" starttime="20220615 19:44:03.600" endtime="20220615 19:44:03.607"/>
-</kw>
-<status status="PASS" starttime="20220615 19:44:03.600" endtime="20220615 19:44:03.607"/>
-</kw>
-<status status="PASS" starttime="20220615 19:44:03.596" endtime="20220615 19:44:03.607"/>
-</test>
-<test id="s1-t4" name="Password is Required" line="20">
-<kw name="Alert span Should Be" library="Actions">
-<arg>Agora só falta a senha!</arg>
-<kw name="Wait For Elements State" library="Browser">
-<arg>css=span[class=error] &gt;&gt; text=${expect_alert}</arg>
-<arg>visible</arg>
-<arg>5</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20220615 19:44:03.619" level="INFO">Waited for Element with selector css=span[class=error] &gt;&gt; text=Agora só falta a senha! at state visible</msg>
-<status status="PASS" starttime="20220615 19:44:03.614" endtime="20220615 19:44:03.619"/>
-</kw>
-<status status="PASS" starttime="20220615 19:44:03.613" endtime="20220615 19:44:03.619"/>
-</kw>
-<status status="PASS" starttime="20220615 19:44:03.610" endtime="20220615 19:44:03.620"/>
-</test>
-<kw name="Finish Session" library="Base" type="TEARDOWN">
-<kw name="Take Screenshot" library="Browser">
-<tag>PageContent</tag>
-<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
-<msg timestamp="20220615 19:44:03.808" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220615 19:44:03.623" endtime="20220615 19:44:03.808"/>
-</kw>
-<status status="PASS" starttime="20220615 19:44:03.623" endtime="20220615 19:44:03.809"/>
-</kw>
-<doc>Signup Reqquired Test Suite</doc>
-<status status="FAIL" starttime="20220615 19:43:52.710" endtime="20220615 19:44:03.809"/>
+<doc>Temp</doc>
+<status status="FAIL" starttime="20220615 19:56:13.401" endtime="20220615 19:56:13.430"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="1" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="3" fail="1" skip="0" id="s1" name="SignupRequired">SignupRequired</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Temp">Temp</stat>
 </suite>
 </statistics>
 <errors>

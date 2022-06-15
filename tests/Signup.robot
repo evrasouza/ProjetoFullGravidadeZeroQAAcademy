@@ -40,11 +40,17 @@ Wrong Email
 
 Required Fields
     [Tags]        attempt_signup        rr_fields
-    [Template]    Signup Subbmmit Without Form
-    Cadê o seu nome?
-    E o sobrenome?
-    O email é importante também!
-    Agora só falta a senha!
+
+    @{expected_alerts}    Create List
+    ...                   Cadê o seu nome?
+    ...                   E o sobrenome?
+    ...                   O email é importante também!
+    ...                   Agora só falta a senha!
+
+    Go To Signup form
+    Submit Signup Form
+    Alert Spans Should Be    ${expected_alerts}
+
 
 Short Password
     [Tags]        attempt_signup        short_pass
@@ -74,11 +80,4 @@ Signup With Short Pass
     Fill Signup Form    ${user}
     Submit Signup Form
     Alert span Should Be    Informe uma senha com pelo menos 6 caracteres
-
-Signup Subbmmit Without Form
-    [Arguments]        ${expected_alert}
-
-    Go To Signup form
-    Submit Signup Form
-    Alert span Should Be    ${expected_alert}
     

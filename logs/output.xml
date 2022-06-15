@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0 (Python 3.9.5 on win32)" generated="20220615 16:43:46.325" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0 (Python 3.9.5 on win32)" generated="20220615 16:51:24.631" rpa="false" schemaversion="3">
 <suite id="s1" name="Signup" source="C:\projects\ROBOT\GravidadeZero\project\tests\Signup.robot">
-<test id="s1-t1" name="Register a new user" line="10">
+<test id="s1-t1" name="Required Fields" line="41">
 <kw name="Start Session" library="Base" type="SETUP">
 <kw name="New Browser" library="Browser">
 <arg>chromium</arg>
@@ -10,25 +10,20 @@
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Create a new playwright Browser with specified options.</doc>
-<msg timestamp="20220615 16:43:47.178" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 500.0, "tracesDir": "C:\\projects\\ROBOT\\GravidadeZero\\project\\logs\\browser\\traces\\9ea4842f-b451-4049-865f-bc114fd19435"}</msg>
-<msg timestamp="20220615 16:43:47.467" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":500,"tracesDir":"C:\\projects\\ROBOT\\GravidadeZero\\project\\logs\\browser\\traces\\9ea4842f-b451-4049-865f-bc114fd19435"}</msg>
-<status status="PASS" starttime="20220615 16:43:47.177" endtime="20220615 16:43:47.467"/>
+<msg timestamp="20220615 16:51:25.482" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 500.0, "tracesDir": "C:\\projects\\ROBOT\\GravidadeZero\\project\\logs\\browser\\traces\\88f1c125-b4ea-401c-a520-46efc45978f1"}</msg>
+<msg timestamp="20220615 16:51:25.749" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":500,"tracesDir":"C:\\projects\\ROBOT\\GravidadeZero\\project\\logs\\browser\\traces\\88f1c125-b4ea-401c-a520-46efc45978f1"}</msg>
+<status status="PASS" starttime="20220615 16:51:25.481" endtime="20220615 16:51:25.750"/>
 </kw>
 <kw name="New Page" library="Browser">
 <arg>${URL_BASE}</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Open a new Page.</doc>
-<msg timestamp="20220615 16:43:50.016" level="INFO">Successfully initialized new page object and opened url: https://getgeeks-evra.herokuapp.com</msg>
-<msg timestamp="20220615 16:43:50.016" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
-<status status="PASS" starttime="20220615 16:43:47.468" endtime="20220615 16:43:50.016"/>
+<msg timestamp="20220615 16:51:28.521" level="INFO">Successfully initialized new page object and opened url: https://getgeeks-evra.herokuapp.com</msg>
+<msg timestamp="20220615 16:51:28.521" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20220615 16:51:25.750" endtime="20220615 16:51:28.521"/>
 </kw>
-<status status="PASS" starttime="20220615 16:43:47.177" endtime="20220615 16:43:50.016"/>
-</kw>
-<kw name="Factory User" library="User">
-<var>${user}</var>
-<msg timestamp="20220615 16:43:50.016" level="INFO">${user} = {'name': 'Ricardo', 'lastname': 'Spencer', 'email': 'chavezdouglas@gmail.com', 'password': 'pwd123'}</msg>
-<status status="PASS" starttime="20220615 16:43:50.016" endtime="20220615 16:43:50.016"/>
+<status status="PASS" starttime="20220615 16:51:25.481" endtime="20220615 16:51:28.521"/>
 </kw>
 <kw name="Go To Signup form" library="Actions">
 <kw name="Go To" library="Browser">
@@ -36,8 +31,8 @@
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Navigates to the given ``url``.</doc>
-<msg timestamp="20220615 16:43:51.533" level="INFO">Successfully opened URL https://getgeeks-evra.herokuapp.com/signup</msg>
-<status status="PASS" starttime="20220615 16:43:50.016" endtime="20220615 16:43:51.533"/>
+<msg timestamp="20220615 16:51:29.857" level="INFO">Successfully opened URL https://getgeeks-evra.herokuapp.com/signup</msg>
+<status status="PASS" starttime="20220615 16:51:28.521" endtime="20220615 16:51:29.857"/>
 </kw>
 <kw name="Wait For Elements State" library="Browser">
 <arg>css=.signup-form</arg>
@@ -46,50 +41,10 @@
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20220615 16:43:51.552" level="INFO">Waited for Element with selector css=.signup-form at state visible</msg>
-<status status="PASS" starttime="20220615 16:43:51.533" endtime="20220615 16:43:51.552"/>
+<msg timestamp="20220615 16:51:29.875" level="INFO">Waited for Element with selector css=.signup-form at state visible</msg>
+<status status="PASS" starttime="20220615 16:51:29.857" endtime="20220615 16:51:29.875"/>
 </kw>
-<status status="PASS" starttime="20220615 16:43:50.016" endtime="20220615 16:43:51.552"/>
-</kw>
-<kw name="Fill Signup Form" library="Actions">
-<arg>${user}</arg>
-<kw name="Fill Text" library="Browser">
-<arg>id=name</arg>
-<arg>${user}[name]</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<msg timestamp="20220615 16:43:51.552" level="INFO">Fills the text 'Ricardo' in the given field.</msg>
-<status status="PASS" starttime="20220615 16:43:51.552" endtime="20220615 16:43:52.087"/>
-</kw>
-<kw name="Fill Text" library="Browser">
-<arg>id=lastname</arg>
-<arg>${user}[lastname]</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<msg timestamp="20220615 16:43:52.089" level="INFO">Fills the text 'Spencer' in the given field.</msg>
-<status status="PASS" starttime="20220615 16:43:52.087" endtime="20220615 16:43:52.619"/>
-</kw>
-<kw name="Fill Text" library="Browser">
-<arg>id=email</arg>
-<arg>${user}[email]</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<msg timestamp="20220615 16:43:52.619" level="INFO">Fills the text 'chavezdouglas@gmail.com' in the given field.</msg>
-<status status="PASS" starttime="20220615 16:43:52.619" endtime="20220615 16:43:53.143"/>
-</kw>
-<kw name="Fill Text" library="Browser">
-<arg>id=password</arg>
-<arg>${user}[password]</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<msg timestamp="20220615 16:43:53.143" level="INFO">Fills the text 'pwd123' in the given field.</msg>
-<status status="PASS" starttime="20220615 16:43:53.143" endtime="20220615 16:43:53.672"/>
-</kw>
-<status status="PASS" starttime="20220615 16:43:51.552" endtime="20220615 16:43:53.672"/>
+<status status="PASS" starttime="20220615 16:51:28.521" endtime="20220615 16:51:29.875"/>
 </kw>
 <kw name="Submit Signup Form" library="Actions">
 <kw name="Click" library="Browser">
@@ -97,356 +52,12 @@
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" starttime="20220615 16:43:53.672" endtime="20220615 16:43:54.225"/>
+<status status="PASS" starttime="20220615 16:51:29.875" endtime="20220615 16:51:30.473"/>
 </kw>
-<status status="PASS" starttime="20220615 16:43:53.672" endtime="20220615 16:43:54.225"/>
-</kw>
-<kw name="User Should Be Registered" library="Actions">
-<kw name="Set Variable" library="BuiltIn">
-<var>${expect_message}</var>
-<arg>css=p &gt;&gt; text=Agora você faz parte da Getgeeks. Tenha uma ótima experiência.</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220615 16:43:54.226" level="INFO">${expect_message} = css=p &gt;&gt; text=Agora você faz parte da Getgeeks. Tenha uma ótima experiência.</msg>
-<status status="PASS" starttime="20220615 16:43:54.226" endtime="20220615 16:43:54.226"/>
-</kw>
-<kw name="Wait For Elements State" library="Browser">
-<arg>${expect_message}</arg>
-<arg>visible</arg>
-<arg>5</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20220615 16:43:54.543" level="INFO">Waited for Element with selector css=p &gt;&gt; text=Agora você faz parte da Getgeeks. Tenha uma ótima experiência. at state visible</msg>
-<status status="PASS" starttime="20220615 16:43:54.226" endtime="20220615 16:43:54.543"/>
-</kw>
-<status status="PASS" starttime="20220615 16:43:54.226" endtime="20220615 16:43:54.543"/>
-</kw>
-<kw name="Finish Session" library="Base" type="TEARDOWN">
-<kw name="Take Screenshot" library="Browser">
-<tag>PageContent</tag>
-<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
-<msg timestamp="20220615 16:43:54.638" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220615 16:43:54.544" endtime="20220615 16:43:54.638"/>
-</kw>
-<status status="PASS" starttime="20220615 16:43:54.544" endtime="20220615 16:43:54.639"/>
-</kw>
-<tag>new_user</tag>
-<status status="PASS" starttime="20220615 16:43:47.175" endtime="20220615 16:43:54.639"/>
-</test>
-<test id="s1-t2" name="Duplicate user" line="20">
-<kw name="Start Session" library="Base" type="SETUP">
-<kw name="New Browser" library="Browser">
-<arg>chromium</arg>
-<arg>headless=false</arg>
-<arg>slowMo=00:00:00.5</arg>
-<tag>BrowserControl</tag>
-<tag>Setter</tag>
-<doc>Create a new playwright Browser with specified options.</doc>
-<msg timestamp="20220615 16:43:54.689" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 500.0, "tracesDir": "C:\\projects\\ROBOT\\GravidadeZero\\project\\logs\\browser\\traces\\5fa8da20-e82f-4705-a340-c44e47d150c3"}</msg>
-<msg timestamp="20220615 16:43:55.015" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":500,"tracesDir":"C:\\projects\\ROBOT\\GravidadeZero\\project\\logs\\browser\\traces\\5fa8da20-e82f-4705-a340-c44e47d150c3"}</msg>
-<status status="PASS" starttime="20220615 16:43:54.688" endtime="20220615 16:43:55.015"/>
-</kw>
-<kw name="New Page" library="Browser">
-<arg>${URL_BASE}</arg>
-<tag>BrowserControl</tag>
-<tag>Setter</tag>
-<doc>Open a new Page.</doc>
-<msg timestamp="20220615 16:43:57.775" level="INFO">Successfully initialized new page object and opened url: https://getgeeks-evra.herokuapp.com</msg>
-<msg timestamp="20220615 16:43:57.775" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
-<status status="PASS" starttime="20220615 16:43:55.015" endtime="20220615 16:43:57.775"/>
-</kw>
-<status status="PASS" starttime="20220615 16:43:54.688" endtime="20220615 16:43:57.775"/>
-</kw>
-<kw name="Factory User" library="User">
-<var>${user}</var>
-<msg timestamp="20220615 16:43:57.775" level="INFO">${user} = {'name': 'Jessica', 'lastname': 'Moore', 'email': 'whitejeffery@gmail.com', 'password': 'pwd123'}</msg>
-<status status="PASS" starttime="20220615 16:43:57.775" endtime="20220615 16:43:57.775"/>
-</kw>
-<kw name="Add User From Database" library="Helpers">
-<arg>${user}</arg>
-<kw name="Connect To Postgress" library="Database">
-<kw name="Connect To Database" library="DatabaseLibrary">
-<arg>psycopg2</arg>
-<arg>sjemttiw</arg>
-<arg>sjemttiw</arg>
-<arg>uWmnKccrm9rhASbTG12W5Zprm_KqFUqd</arg>
-<arg>queenie.db.elephantsql.com</arg>
-<arg>5432</arg>
-<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
-connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
-<msg timestamp="20220615 16:43:57.790" level="INFO">Connecting using : psycopg2.connect(database=sjemttiw, user=sjemttiw, password=uWmnKccrm9rhASbTG12W5Zprm_KqFUqd, host=queenie.db.elephantsql.com, port=5432) </msg>
-<status status="PASS" starttime="20220615 16:43:57.775" endtime="20220615 16:43:58.728"/>
-</kw>
-<status status="PASS" starttime="20220615 16:43:57.775" endtime="20220615 16:43:58.729"/>
-</kw>
-<kw name="Insert User" library="Database">
-<arg>${user}</arg>
-<kw name="Set Variable" library="BuiltIn">
-<var>${q}</var>
-<arg>INSERT INTO public.users (name, email, password_hash, is_geek) values ('${u}[name] ${u}[lastname]', '${u}[email]', '${u}[password]', false);</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220615 16:43:58.729" level="INFO">${q} = INSERT INTO public.users (name, email, password_hash, is_geek) values ('Jessica Moore', 'whitejeffery@gmail.com', 'pwd123', false);</msg>
-<status status="PASS" starttime="20220615 16:43:58.729" endtime="20220615 16:43:58.729"/>
-</kw>
-<kw name="Execute Sql String" library="DatabaseLibrary">
-<arg>${q}</arg>
-<doc>Executes the sqlString as SQL commands. Useful to pass arguments to your sql. Set optional input `sansTran` to
-True to run command without an explicit transaction commit or rollback.</doc>
-<msg timestamp="20220615 16:43:58.730" level="INFO">Executing : Execute SQL String  |  INSERT INTO public.users (name, email, password_hash, is_geek) values ('Jessica Moore', 'whitejeffery@gmail.com', 'pwd123', false); </msg>
-<status status="PASS" starttime="20220615 16:43:58.729" endtime="20220615 16:43:59.156"/>
-</kw>
-<status status="PASS" starttime="20220615 16:43:58.729" endtime="20220615 16:43:59.156"/>
-</kw>
-<kw name="Disconnect From Database" library="DatabaseLibrary">
-<doc>Disconnects from the database.</doc>
-<msg timestamp="20220615 16:43:59.156" level="INFO">Executing : Disconnect From Database</msg>
-<status status="PASS" starttime="20220615 16:43:59.156" endtime="20220615 16:43:59.156"/>
-</kw>
-<status status="PASS" starttime="20220615 16:43:57.775" endtime="20220615 16:43:59.156"/>
-</kw>
-<kw name="Go To Signup form" library="Actions">
-<kw name="Go To" library="Browser">
-<arg>${URL_BASE}/signup</arg>
-<tag>BrowserControl</tag>
-<tag>Setter</tag>
-<doc>Navigates to the given ``url``.</doc>
-<msg timestamp="20220615 16:44:00.510" level="INFO">Successfully opened URL https://getgeeks-evra.herokuapp.com/signup</msg>
-<status status="PASS" starttime="20220615 16:43:59.156" endtime="20220615 16:44:00.510"/>
-</kw>
-<kw name="Wait For Elements State" library="Browser">
-<arg>css=.signup-form</arg>
-<arg>visible</arg>
-<arg>5</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20220615 16:44:00.529" level="INFO">Waited for Element with selector css=.signup-form at state visible</msg>
-<status status="PASS" starttime="20220615 16:44:00.510" endtime="20220615 16:44:00.529"/>
-</kw>
-<status status="PASS" starttime="20220615 16:43:59.156" endtime="20220615 16:44:00.529"/>
-</kw>
-<kw name="Fill Signup Form" library="Actions">
-<arg>${user}</arg>
-<kw name="Fill Text" library="Browser">
-<arg>id=name</arg>
-<arg>${user}[name]</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<msg timestamp="20220615 16:44:00.530" level="INFO">Fills the text 'Jessica' in the given field.</msg>
-<status status="PASS" starttime="20220615 16:44:00.530" endtime="20220615 16:44:01.062"/>
-</kw>
-<kw name="Fill Text" library="Browser">
-<arg>id=lastname</arg>
-<arg>${user}[lastname]</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<msg timestamp="20220615 16:44:01.062" level="INFO">Fills the text 'Moore' in the given field.</msg>
-<status status="PASS" starttime="20220615 16:44:01.062" endtime="20220615 16:44:01.595"/>
-</kw>
-<kw name="Fill Text" library="Browser">
-<arg>id=email</arg>
-<arg>${user}[email]</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<msg timestamp="20220615 16:44:01.595" level="INFO">Fills the text 'whitejeffery@gmail.com' in the given field.</msg>
-<status status="PASS" starttime="20220615 16:44:01.595" endtime="20220615 16:44:02.121"/>
-</kw>
-<kw name="Fill Text" library="Browser">
-<arg>id=password</arg>
-<arg>${user}[password]</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<msg timestamp="20220615 16:44:02.121" level="INFO">Fills the text 'pwd123' in the given field.</msg>
-<status status="PASS" starttime="20220615 16:44:02.121" endtime="20220615 16:44:02.645"/>
-</kw>
-<status status="PASS" starttime="20220615 16:44:00.529" endtime="20220615 16:44:02.645"/>
-</kw>
-<kw name="Submit Signup Form" library="Actions">
-<kw name="Click" library="Browser">
-<arg>css=.submit-button &gt;&gt; text=Cadastrar</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" starttime="20220615 16:44:02.645" endtime="20220615 16:44:03.190"/>
-</kw>
-<status status="PASS" starttime="20220615 16:44:02.645" endtime="20220615 16:44:03.190"/>
-</kw>
-<kw name="Modal Content Should Be" library="Actions">
-<arg>Já temos um usuário com o e-mail informado.</arg>
-<kw name="Set Variable" library="BuiltIn">
-<var>${title}</var>
-<arg>css=.swal2-title</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220615 16:44:03.192" level="INFO">${title} = css=.swal2-title</msg>
-<status status="PASS" starttime="20220615 16:44:03.192" endtime="20220615 16:44:03.192"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${content}</var>
-<arg>css=.swal2-html-container</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220615 16:44:03.192" level="INFO">${content} = css=.swal2-html-container</msg>
-<status status="PASS" starttime="20220615 16:44:03.192" endtime="20220615 16:44:03.192"/>
-</kw>
-<kw name="Wait For Elements State" library="Browser">
-<arg>${title}</arg>
-<arg>visible</arg>
-<arg>5</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20220615 16:44:03.503" level="INFO">Waited for Element with selector css=.swal2-title at state visible</msg>
-<status status="PASS" starttime="20220615 16:44:03.192" endtime="20220615 16:44:03.503"/>
-</kw>
-<kw name="Get Text" library="Browser">
-<arg>${title}</arg>
-<arg>equal</arg>
-<arg>Oops...</arg>
-<tag>Assertion</tag>
-<tag>Getter</tag>
-<tag>PageContent</tag>
-<doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" starttime="20220615 16:44:03.503" endtime="20220615 16:44:03.521"/>
-</kw>
-<kw name="Wait For Elements State" library="Browser">
-<arg>${content}</arg>
-<arg>visible</arg>
-<arg>5</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20220615 16:44:03.525" level="INFO">Waited for Element with selector css=.swal2-html-container at state visible</msg>
-<status status="PASS" starttime="20220615 16:44:03.521" endtime="20220615 16:44:03.525"/>
-</kw>
-<kw name="Get Text" library="Browser">
-<arg>${content}</arg>
-<arg>equal</arg>
-<arg>${expect_message}</arg>
-<tag>Assertion</tag>
-<tag>Getter</tag>
-<tag>PageContent</tag>
-<doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" starttime="20220615 16:44:03.525" endtime="20220615 16:44:03.536"/>
-</kw>
-<status status="PASS" starttime="20220615 16:44:03.191" endtime="20220615 16:44:03.536"/>
-</kw>
-<kw name="Finish Session" library="Base" type="TEARDOWN">
-<kw name="Take Screenshot" library="Browser">
-<tag>PageContent</tag>
-<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
-<msg timestamp="20220615 16:44:03.729" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-2.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220615 16:44:03.537" endtime="20220615 16:44:03.729"/>
-</kw>
-<status status="PASS" starttime="20220615 16:44:03.537" endtime="20220615 16:44:03.729"/>
-</kw>
-<tag>attempt_signup</tag>
-<status status="PASS" starttime="20220615 16:43:54.685" endtime="20220615 16:44:03.730"/>
-</test>
-<test id="s1-t3" name="Wrong Email" line="31">
-<kw name="Start Session" library="Base" type="SETUP">
-<kw name="New Browser" library="Browser">
-<arg>chromium</arg>
-<arg>headless=false</arg>
-<arg>slowMo=00:00:00.5</arg>
-<tag>BrowserControl</tag>
-<tag>Setter</tag>
-<doc>Create a new playwright Browser with specified options.</doc>
-<msg timestamp="20220615 16:44:03.789" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 500.0, "tracesDir": "C:\\projects\\ROBOT\\GravidadeZero\\project\\logs\\browser\\traces\\cff30d07-9335-4dc1-a7e2-d68de7946314"}</msg>
-<msg timestamp="20220615 16:44:04.069" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":500,"tracesDir":"C:\\projects\\ROBOT\\GravidadeZero\\project\\logs\\browser\\traces\\cff30d07-9335-4dc1-a7e2-d68de7946314"}</msg>
-<status status="PASS" starttime="20220615 16:44:03.789" endtime="20220615 16:44:04.069"/>
-</kw>
-<kw name="New Page" library="Browser">
-<arg>${URL_BASE}</arg>
-<tag>BrowserControl</tag>
-<tag>Setter</tag>
-<doc>Open a new Page.</doc>
-<msg timestamp="20220615 16:44:07.017" level="INFO">Successfully initialized new page object and opened url: https://getgeeks-evra.herokuapp.com</msg>
-<msg timestamp="20220615 16:44:07.017" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
-<status status="PASS" starttime="20220615 16:44:04.069" endtime="20220615 16:44:07.017"/>
-</kw>
-<status status="PASS" starttime="20220615 16:44:03.788" endtime="20220615 16:44:07.017"/>
-</kw>
-<kw name="Factory Wrong Email" library="User">
-<var>${user}</var>
-<msg timestamp="20220615 16:44:07.017" level="INFO">${user} = {'name': 'Justin', 'lastname': 'Carter', 'email': 'justin&amp;gmail.com', 'password': 'pwd123'}</msg>
-<status status="PASS" starttime="20220615 16:44:07.017" endtime="20220615 16:44:07.017"/>
-</kw>
-<kw name="Go To Signup form" library="Actions">
-<kw name="Go To" library="Browser">
-<arg>${URL_BASE}/signup</arg>
-<tag>BrowserControl</tag>
-<tag>Setter</tag>
-<doc>Navigates to the given ``url``.</doc>
-<msg timestamp="20220615 16:44:08.461" level="INFO">Successfully opened URL https://getgeeks-evra.herokuapp.com/signup</msg>
-<status status="PASS" starttime="20220615 16:44:07.017" endtime="20220615 16:44:08.461"/>
-</kw>
-<kw name="Wait For Elements State" library="Browser">
-<arg>css=.signup-form</arg>
-<arg>visible</arg>
-<arg>5</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20220615 16:44:08.479" level="INFO">Waited for Element with selector css=.signup-form at state visible</msg>
-<status status="PASS" starttime="20220615 16:44:08.462" endtime="20220615 16:44:08.479"/>
-</kw>
-<status status="PASS" starttime="20220615 16:44:07.017" endtime="20220615 16:44:08.480"/>
-</kw>
-<kw name="Fill Signup Form" library="Actions">
-<arg>${user}</arg>
-<kw name="Fill Text" library="Browser">
-<arg>id=name</arg>
-<arg>${user}[name]</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<msg timestamp="20220615 16:44:08.481" level="INFO">Fills the text 'Justin' in the given field.</msg>
-<status status="PASS" starttime="20220615 16:44:08.481" endtime="20220615 16:44:09.005"/>
-</kw>
-<kw name="Fill Text" library="Browser">
-<arg>id=lastname</arg>
-<arg>${user}[lastname]</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<msg timestamp="20220615 16:44:09.006" level="INFO">Fills the text 'Carter' in the given field.</msg>
-<status status="PASS" starttime="20220615 16:44:09.005" endtime="20220615 16:44:09.527"/>
-</kw>
-<kw name="Fill Text" library="Browser">
-<arg>id=email</arg>
-<arg>${user}[email]</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<msg timestamp="20220615 16:44:09.527" level="INFO">Fills the text 'justin&amp;gmail.com' in the given field.</msg>
-<status status="PASS" starttime="20220615 16:44:09.527" endtime="20220615 16:44:10.057"/>
-</kw>
-<kw name="Fill Text" library="Browser">
-<arg>id=password</arg>
-<arg>${user}[password]</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<msg timestamp="20220615 16:44:10.057" level="INFO">Fills the text 'pwd123' in the given field.</msg>
-<status status="PASS" starttime="20220615 16:44:10.057" endtime="20220615 16:44:10.577"/>
-</kw>
-<status status="PASS" starttime="20220615 16:44:08.480" endtime="20220615 16:44:10.577"/>
-</kw>
-<kw name="Submit Signup Form" library="Actions">
-<kw name="Click" library="Browser">
-<arg>css=.submit-button &gt;&gt; text=Cadastrar</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" starttime="20220615 16:44:10.577" endtime="20220615 16:44:11.113"/>
-</kw>
-<status status="PASS" starttime="20220615 16:44:10.577" endtime="20220615 16:44:11.114"/>
+<status status="PASS" starttime="20220615 16:51:29.875" endtime="20220615 16:51:30.474"/>
 </kw>
 <kw name="Field Notification Should Be" library="Actions">
-<arg>O email está estranho</arg>
+<arg>Cadê o seu nome?</arg>
 <kw name="Wait For Elements State" library="Browser">
 <arg>css=span[class=error] &gt;&gt; text=${expect_notice}</arg>
 <arg>visible</arg>
@@ -454,36 +65,79 @@ True to run command without an explicit transaction commit or rollback.</doc>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20220615 16:44:11.120" level="INFO">Waited for Element with selector css=span[class=error] &gt;&gt; text=O email está estranho at state visible</msg>
-<status status="PASS" starttime="20220615 16:44:11.115" endtime="20220615 16:44:11.120"/>
+<msg timestamp="20220615 16:51:30.495" level="INFO">Waited for Element with selector css=span[class=error] &gt;&gt; text=Cadê o seu nome? at state visible</msg>
+<status status="PASS" starttime="20220615 16:51:30.477" endtime="20220615 16:51:30.495"/>
 </kw>
-<status status="PASS" starttime="20220615 16:44:11.114" endtime="20220615 16:44:11.120"/>
+<status status="PASS" starttime="20220615 16:51:30.476" endtime="20220615 16:51:30.495"/>
+</kw>
+<kw name="Field Notification Should Be" library="Actions">
+<arg>E o sobrenome?</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=span[class=error] &gt;&gt; text=${expect_notice}</arg>
+<arg>visible</arg>
+<arg>5</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220615 16:51:30.503" level="INFO">Waited for Element with selector css=span[class=error] &gt;&gt; text=E o sobrenome? at state visible</msg>
+<status status="PASS" starttime="20220615 16:51:30.496" endtime="20220615 16:51:30.503"/>
+</kw>
+<status status="PASS" starttime="20220615 16:51:30.496" endtime="20220615 16:51:30.503"/>
+</kw>
+<kw name="Field Notification Should Be" library="Actions">
+<arg>O email é importante também!</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=span[class=error] &gt;&gt; text=${expect_notice}</arg>
+<arg>visible</arg>
+<arg>5</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220615 16:51:30.509" level="INFO">Waited for Element with selector css=span[class=error] &gt;&gt; text=O email é importante também! at state visible</msg>
+<status status="PASS" starttime="20220615 16:51:30.504" endtime="20220615 16:51:30.510"/>
+</kw>
+<status status="PASS" starttime="20220615 16:51:30.503" endtime="20220615 16:51:30.510"/>
+</kw>
+<kw name="Field Notification Should Be" library="Actions">
+<arg>Agora só falta a senha!</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=span[class=error] &gt;&gt; text=${expect_notice}</arg>
+<arg>visible</arg>
+<arg>5</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220615 16:51:30.518" level="INFO">Waited for Element with selector css=span[class=error] &gt;&gt; text=Agora só falta a senha! at state visible</msg>
+<status status="PASS" starttime="20220615 16:51:30.511" endtime="20220615 16:51:30.518"/>
+</kw>
+<status status="PASS" starttime="20220615 16:51:30.511" endtime="20220615 16:51:30.518"/>
 </kw>
 <kw name="Finish Session" library="Base" type="TEARDOWN">
 <kw name="Take Screenshot" library="Browser">
 <tag>PageContent</tag>
 <doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
-<msg timestamp="20220615 16:44:11.288" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-3.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220615 16:44:11.121" endtime="20220615 16:44:11.289"/>
+<msg timestamp="20220615 16:51:30.711" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220615 16:51:30.519" endtime="20220615 16:51:30.712"/>
 </kw>
-<status status="PASS" starttime="20220615 16:44:11.121" endtime="20220615 16:44:11.289"/>
+<status status="PASS" starttime="20220615 16:51:30.519" endtime="20220615 16:51:30.712"/>
 </kw>
 <tag>attempt_signup</tag>
-<status status="PASS" starttime="20220615 16:44:03.783" endtime="20220615 16:44:11.290"/>
+<tag>rr_fields</tag>
+<status status="PASS" starttime="20220615 16:51:25.479" endtime="20220615 16:51:30.714"/>
 </test>
 <doc>Signup Test Suite</doc>
-<status status="PASS" starttime="20220615 16:43:46.326" endtime="20220615 16:44:11.332"/>
+<status status="PASS" starttime="20220615 16:51:24.632" endtime="20220615 16:51:30.767"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="2" fail="0" skip="0">attempt_signup</stat>
-<stat pass="1" fail="0" skip="0">new_user</stat>
+<stat pass="1" fail="0" skip="0">attempt_signup</stat>
+<stat pass="1" fail="0" skip="0">rr_fields</stat>
 </tag>
 <suite>
-<stat pass="3" fail="0" skip="0" id="s1" name="Signup">Signup</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Signup">Signup</stat>
 </suite>
 </statistics>
 <errors>

@@ -19,3 +19,12 @@ def factory_wrong_email():
         'email': first_name.lower() + '&gmail.com',
         'password': 'pwd123'
     }
+
+def factory_user_login():
+
+    return {
+        'name': 'Everton',
+        'lastname': 'Souza',
+        'email': 'everton@souza.com.br',
+        'password': 'pwd123'
+    }

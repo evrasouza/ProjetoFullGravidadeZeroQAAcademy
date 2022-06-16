@@ -8,7 +8,11 @@ Test Teardown    Finish Session
 
 *** Test Cases ***
 User Login
+
+    ${user}                   Factory User Login
+    Add User From Database    ${user}
+    
     Go to Login Page
-    Fill Credentials        everton@souza.com.br        pwd123
+    Fill Credentials        ${user}
     Submit Credentials
-    User Should Be Logged In    Everton Souza
+    User Should Be Logged In    ${user}

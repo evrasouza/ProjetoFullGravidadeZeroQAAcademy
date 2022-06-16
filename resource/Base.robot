@@ -4,6 +4,7 @@ Documentation        Base Test
 Library    Browser
 Library    factories/User.py
 
+Resource   actions/_SharedActions.robot
 Resource   actions/AuthActions.robot
 Resource   actions/SignupActions.robot
 

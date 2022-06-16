@@ -4,9 +4,14 @@ Documentation        Base Test
 Library    Browser
 Library    factories/User.py
 
-Resource    Actions.robot
+Resource   actions/AuthActions.robot
+Resource   actions/SignupActions.robot
+
 Resource    Database.robot
 Resource    Helpers.robot
+
+*** Variables ***
+${URL_BASE}        https://getgeeks-evra.herokuapp.com
 
 *** Keywords ***
 Start Session

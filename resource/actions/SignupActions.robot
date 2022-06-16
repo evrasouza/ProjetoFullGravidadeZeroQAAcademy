@@ -1,11 +1,10 @@
 *** Settings ***
-Documentation        Ações do Sistema
+Documentation        Signup Actions
 
 Library    Browser
 Library    Collections
 
-*** Variables ***
-${URL_BASE}        https://getgeeks-evra.herokuapp.com
+Resource   ../Base.robot
 
 *** Keywords ***
 Go To Signup form

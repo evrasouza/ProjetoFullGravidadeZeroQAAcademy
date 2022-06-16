@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0 (Python 3.9.4 on win32)" generated="20220616 12:24:06.047" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0 (Python 3.9.4 on win32)" generated="20220616 13:33:54.693" rpa="false" schemaversion="3">
 <suite id="s1" name="Login" source="C:\qaninja\GravidadeZero\project\tests\Login.robot">
 <test id="s1-t1" name="User Login" line="10">
 <kw name="Start Session" library="Base" type="SETUP">
@@ -10,73 +10,25 @@
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Create a new playwright Browser with specified options.</doc>
-<msg timestamp="20220616 12:24:07.856" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "C:\\qaninja\\GravidadeZero\\project\\logs\\browser\\traces\\17076872-3c80-4d09-80f6-f86707a6bd07"}</msg>
-<msg timestamp="20220616 12:24:09.103" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"C:\\qaninja\\GravidadeZero\\project\\logs\\browser\\traces\\17076872-3c80-4d09-80f6-f86707a6bd07"}</msg>
-<status status="PASS" starttime="20220616 12:24:07.855" endtime="20220616 12:24:09.103"/>
+<msg timestamp="20220616 13:33:56.505" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "C:\\qaninja\\GravidadeZero\\project\\logs\\browser\\traces\\9eef3511-d26b-4b69-a201-906f7ca61b13"}</msg>
+<msg timestamp="20220616 13:33:57.757" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"C:\\qaninja\\GravidadeZero\\project\\logs\\browser\\traces\\9eef3511-d26b-4b69-a201-906f7ca61b13"}</msg>
+<status status="PASS" starttime="20220616 13:33:56.505" endtime="20220616 13:33:57.757"/>
 </kw>
 <kw name="New Page" library="Browser">
 <arg>${URL_BASE}</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Open a new Page.</doc>
-<msg timestamp="20220616 12:24:11.623" level="INFO">Successfully initialized new page object and opened url: https://getgeeks-evra.herokuapp.com</msg>
-<msg timestamp="20220616 12:24:11.623" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
-<status status="PASS" starttime="20220616 12:24:09.104" endtime="20220616 12:24:11.624"/>
+<msg timestamp="20220616 13:34:00.155" level="INFO">Successfully initialized new page object and opened url: https://getgeeks-evra.herokuapp.com</msg>
+<msg timestamp="20220616 13:34:00.155" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20220616 13:33:57.757" endtime="20220616 13:34:00.155"/>
 </kw>
-<status status="PASS" starttime="20220616 12:24:07.855" endtime="20220616 12:24:11.624"/>
+<status status="PASS" starttime="20220616 13:33:56.505" endtime="20220616 13:34:00.156"/>
 </kw>
 <kw name="Factory User Login" library="User">
 <var>${user}</var>
-<msg timestamp="20220616 12:24:11.626" level="INFO">${user} = {'name': 'Everton', 'lastname': 'Souza', 'email': 'everton@souza.com.br', 'password': 'pwd123'}</msg>
-<status status="PASS" starttime="20220616 12:24:11.626" endtime="20220616 12:24:11.626"/>
-</kw>
-<kw name="Add User From Database" library="Helpers">
-<arg>${user}</arg>
-<kw name="Connect To Postgress" library="Database">
-<kw name="Connect To Database" library="DatabaseLibrary">
-<arg>psycopg2</arg>
-<arg>sjemttiw</arg>
-<arg>sjemttiw</arg>
-<arg>uWmnKccrm9rhASbTG12W5Zprm_KqFUqd</arg>
-<arg>queenie.db.elephantsql.com</arg>
-<arg>5432</arg>
-<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
-connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
-<msg timestamp="20220616 12:24:11.673" level="INFO">Connecting using : psycopg2.connect(database=sjemttiw, user=sjemttiw, password=uWmnKccrm9rhASbTG12W5Zprm_KqFUqd, host=queenie.db.elephantsql.com, port=5432) </msg>
-<status status="PASS" starttime="20220616 12:24:11.627" endtime="20220616 12:24:12.526"/>
-</kw>
-<status status="PASS" starttime="20220616 12:24:11.627" endtime="20220616 12:24:12.527"/>
-</kw>
-<kw name="Insert User" library="Database">
-<arg>${user}</arg>
-<kw name="Get Hashed Pass" library="User">
-<var>${hashed_pass}</var>
-<arg>${u}[password]</arg>
-<msg timestamp="20220616 12:24:12.583" level="INFO">${hashed_pass} = $2b$08$fd9q1/oJ.BdTjCp6.m.VtO2d25.F9n5kQTU/Z/eUUhp.y1Brmkghq</msg>
-<status status="PASS" starttime="20220616 12:24:12.529" endtime="20220616 12:24:12.583"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${q}</var>
-<arg>INSERT INTO public.users (name, email, password_hash, is_geek) values ('${u}[name] ${u}[lastname]', '${u}[email]', '${hashed_pass}', false);</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220616 12:24:12.584" level="INFO">${q} = INSERT INTO public.users (name, email, password_hash, is_geek) values ('Everton Souza', 'everton@souza.com.br', '$2b$08$fd9q1/oJ.BdTjCp6.m.VtO2d25.F9n5kQTU/Z/eUUhp.y1Brmkghq', false);</msg>
-<status status="PASS" starttime="20220616 12:24:12.583" endtime="20220616 12:24:12.584"/>
-</kw>
-<kw name="Execute Sql String" library="DatabaseLibrary">
-<arg>${q}</arg>
-<doc>Executes the sqlString as SQL commands. Useful to pass arguments to your sql. Set optional input `sansTran` to
-True to run command without an explicit transaction commit or rollback.</doc>
-<msg timestamp="20220616 12:24:12.585" level="INFO">Executing : Execute SQL String  |  INSERT INTO public.users (name, email, password_hash, is_geek) values ('Everton Souza', 'everton@souza.com.br', '$2b$08$fd9q1/oJ.BdTjCp6.m.VtO2d25.F9n5kQTU/Z/eUUhp.y1Brmkghq', false); </msg>
-<status status="PASS" starttime="20220616 12:24:12.584" endtime="20220616 12:24:12.982"/>
-</kw>
-<status status="PASS" starttime="20220616 12:24:12.527" endtime="20220616 12:24:12.983"/>
-</kw>
-<kw name="Disconnect From Database" library="DatabaseLibrary">
-<doc>Disconnects from the database.</doc>
-<msg timestamp="20220616 12:24:12.984" level="INFO">Executing : Disconnect From Database</msg>
-<status status="PASS" starttime="20220616 12:24:12.983" endtime="20220616 12:24:12.985"/>
-</kw>
-<status status="PASS" starttime="20220616 12:24:11.626" endtime="20220616 12:24:12.986"/>
+<msg timestamp="20220616 13:34:00.156" level="INFO">${user} = {'name': 'Everton', 'lastname': 'Souza', 'email': 'everton@souza.com.br', 'password': 'pwd123'}</msg>
+<status status="PASS" starttime="20220616 13:34:00.156" endtime="20220616 13:34:00.156"/>
 </kw>
 <kw name="Go to Login Page" library="AuthActions">
 <kw name="Go To" library="Browser">
@@ -84,8 +36,8 @@ True to run command without an explicit transaction commit or rollback.</doc>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Navigates to the given ``url``.</doc>
-<msg timestamp="20220616 12:24:13.525" level="INFO">Successfully opened URL https://getgeeks-evra.herokuapp.com</msg>
-<status status="PASS" starttime="20220616 12:24:12.990" endtime="20220616 12:24:13.526"/>
+<msg timestamp="20220616 13:34:00.689" level="INFO">Successfully opened URL https://getgeeks-evra.herokuapp.com</msg>
+<status status="PASS" starttime="20220616 13:34:00.157" endtime="20220616 13:34:00.689"/>
 </kw>
 <kw name="Wait For Elements State" library="Browser">
 <arg>css=.login-form</arg>
@@ -94,10 +46,10 @@ True to run command without an explicit transaction commit or rollback.</doc>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20220616 12:24:13.571" level="INFO">Waited for Element with selector css=.login-form at state visible</msg>
-<status status="PASS" starttime="20220616 12:24:13.526" endtime="20220616 12:24:13.571"/>
+<msg timestamp="20220616 13:34:00.736" level="INFO">Waited for Element with selector css=.login-form at state visible</msg>
+<status status="PASS" starttime="20220616 13:34:00.690" endtime="20220616 13:34:00.736"/>
 </kw>
-<status status="PASS" starttime="20220616 12:24:12.989" endtime="20220616 12:24:13.571"/>
+<status status="PASS" starttime="20220616 13:34:00.157" endtime="20220616 13:34:00.736"/>
 </kw>
 <kw name="Fill Credentials" library="AuthActions">
 <arg>${user}</arg>
@@ -107,8 +59,8 @@ True to run command without an explicit transaction commit or rollback.</doc>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<msg timestamp="20220616 12:24:13.573" level="INFO">Fills the text 'everton@souza.com.br' in the given field.</msg>
-<status status="PASS" starttime="20220616 12:24:13.572" endtime="20220616 12:24:13.614"/>
+<msg timestamp="20220616 13:34:00.737" level="INFO">Fills the text 'everton@souza.com.br' in the given field.</msg>
+<status status="PASS" starttime="20220616 13:34:00.737" endtime="20220616 13:34:00.774"/>
 </kw>
 <kw name="Fill Text" library="Browser">
 <arg>id=password</arg>
@@ -116,10 +68,10 @@ True to run command without an explicit transaction commit or rollback.</doc>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<msg timestamp="20220616 12:24:13.615" level="INFO">Fills the text 'pwd123' in the given field.</msg>
-<status status="PASS" starttime="20220616 12:24:13.614" endtime="20220616 12:24:13.647"/>
+<msg timestamp="20220616 13:34:00.775" level="INFO">Fills the text 'pwd123' in the given field.</msg>
+<status status="PASS" starttime="20220616 13:34:00.774" endtime="20220616 13:34:00.807"/>
 </kw>
-<status status="PASS" starttime="20220616 12:24:13.572" endtime="20220616 12:24:13.648"/>
+<status status="PASS" starttime="20220616 13:34:00.737" endtime="20220616 13:34:00.808"/>
 </kw>
 <kw name="Submit Credentials" library="AuthActions">
 <kw name="Click" library="Browser">
@@ -127,9 +79,9 @@ True to run command without an explicit transaction commit or rollback.</doc>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" starttime="20220616 12:24:13.648" endtime="20220616 12:24:13.732"/>
+<status status="PASS" starttime="20220616 13:34:00.808" endtime="20220616 13:34:00.888"/>
 </kw>
-<status status="PASS" starttime="20220616 12:24:13.648" endtime="20220616 12:24:13.732"/>
+<status status="PASS" starttime="20220616 13:34:00.808" endtime="20220616 13:34:00.888"/>
 </kw>
 <kw name="User Should Be Logged In" library="AuthActions">
 <arg>${user}</arg>
@@ -137,15 +89,15 @@ True to run command without an explicit transaction commit or rollback.</doc>
 <var>${element}</var>
 <arg>css=a[href="/profile"]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220616 12:24:13.734" level="INFO">${element} = css=a[href="/profile"]</msg>
-<status status="PASS" starttime="20220616 12:24:13.733" endtime="20220616 12:24:13.734"/>
+<msg timestamp="20220616 13:34:00.889" level="INFO">${element} = css=a[href="/profile"]</msg>
+<status status="PASS" starttime="20220616 13:34:00.889" endtime="20220616 13:34:00.890"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${expected_fullname}</var>
 <arg>${user}[name] ${user}[lastname]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220616 12:24:13.734" level="INFO">${expected_fullname} = Everton Souza</msg>
-<status status="PASS" starttime="20220616 12:24:13.734" endtime="20220616 12:24:13.734"/>
+<msg timestamp="20220616 13:34:00.890" level="INFO">${expected_fullname} = Everton Souza</msg>
+<status status="PASS" starttime="20220616 13:34:00.890" endtime="20220616 13:34:00.890"/>
 </kw>
 <kw name="Wait For Elements State" library="Browser">
 <arg>${element}</arg>
@@ -154,8 +106,8 @@ True to run command without an explicit transaction commit or rollback.</doc>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20220616 12:24:14.535" level="INFO">Waited for Element with selector css=a[href="/profile"] at state visible</msg>
-<status status="PASS" starttime="20220616 12:24:13.734" endtime="20220616 12:24:14.535"/>
+<msg timestamp="20220616 13:34:01.689" level="INFO">Waited for Element with selector css=a[href="/profile"] at state visible</msg>
+<status status="PASS" starttime="20220616 13:34:00.890" endtime="20220616 13:34:01.690"/>
 </kw>
 <kw name="Get Text" library="Browser">
 <arg>${element}</arg>
@@ -165,23 +117,23 @@ True to run command without an explicit transaction commit or rollback.</doc>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" starttime="20220616 12:24:14.536" endtime="20220616 12:24:14.574"/>
+<status status="PASS" starttime="20220616 13:34:01.690" endtime="20220616 13:34:01.726"/>
 </kw>
-<status status="PASS" starttime="20220616 12:24:13.733" endtime="20220616 12:24:14.574"/>
+<status status="PASS" starttime="20220616 13:34:00.889" endtime="20220616 13:34:01.727"/>
 </kw>
 <kw name="Finish Session" library="Base" type="TEARDOWN">
 <kw name="Take Screenshot" library="Browser">
 <tag>PageContent</tag>
 <doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
-<msg timestamp="20220616 12:24:14.760" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220616 12:24:14.575" endtime="20220616 12:24:14.760"/>
+<msg timestamp="20220616 13:34:01.879" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220616 13:34:01.728" endtime="20220616 13:34:01.879"/>
 </kw>
-<status status="PASS" starttime="20220616 12:24:14.574" endtime="20220616 12:24:14.760"/>
+<status status="PASS" starttime="20220616 13:34:01.728" endtime="20220616 13:34:01.879"/>
 </kw>
-<status status="PASS" starttime="20220616 12:24:07.851" endtime="20220616 12:24:14.763"/>
+<status status="PASS" starttime="20220616 13:33:56.489" endtime="20220616 13:34:01.895"/>
 </test>
 <doc>Login Test Suite</doc>
-<status status="PASS" starttime="20220616 12:24:06.050" endtime="20220616 12:24:14.866"/>
+<status status="PASS" starttime="20220616 13:33:54.693" endtime="20220616 13:34:02.004"/>
 </suite>
 <statistics>
 <total>

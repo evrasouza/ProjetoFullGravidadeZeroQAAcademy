@@ -7,4 +7,5 @@ Resource    ../resource/Database.robot
 Back To The Past
     Connect To Postgress
     Reset Env
+    Users seed
     Disconnect From Database

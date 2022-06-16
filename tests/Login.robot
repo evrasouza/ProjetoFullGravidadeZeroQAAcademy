@@ -10,7 +10,6 @@ Test Teardown    Finish Session
 User Login
 
     ${user}                   Factory User Login
-    Add User From Database    ${user}
     
     Go to Login Page
     Fill Credentials        ${user}

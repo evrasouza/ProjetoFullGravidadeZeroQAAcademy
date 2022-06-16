@@ -1,6 +1,12 @@
 from faker import Faker
 fake = Faker()
 
+import bcrypt
+
+def get_hashed_pass(password):
+    hashed = bcrypt.hashpw(password.encode('utf 8'), bcrypt.gensalt(8))
+    return hashed
+
 def factory_user():
     return {
         'name': fake.first_name(),

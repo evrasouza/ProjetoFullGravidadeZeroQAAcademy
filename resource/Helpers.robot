@@ -2,6 +2,7 @@
 Documentation        Test Helpers
 
 Resource    ../resource/Database.robot
+Resource   ../resource/Base.robot
 
 *** Keywords ***
 Add User From Database
@@ -11,5 +12,13 @@ Add User From Database
     Insert User    ${user}
     Disconnect From Database
 
+Do Login
+    [Arguments]        ${user}
+
+    Go to Login Page
+    Fill Credentials    ${user}
+    Submit Credentials
+    User Should Be Logged in    ${user}
+    
     
 

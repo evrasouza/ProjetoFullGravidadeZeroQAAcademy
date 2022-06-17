@@ -14,10 +14,7 @@ Be a Geek
     ${user}        Factory User Be Geek
 
     #Faço um login na plataforma geeks
-    Go to Login Page
-    Fill Credentials    ${user}
-    Submit Credentials
-    User Should Be Logged in    ${user}
+    Do Login       ${user}
 
     #Quando submeto o formulário para me tornar um Geek (prestador de serviços)
 

@@ -34,3 +34,13 @@ def factory_user_login():
         'email': 'everton@souza.com.br',
         'password': 'pwd123'
     }
+
+
+def factory_user_be_geek():
+
+    return {
+        'name': 'Kim',
+        'lastname': 'Dotcom',
+        'email': 'kim@dot.com',
+        'password': 'pwd123'
+    }

@@ -49,28 +49,22 @@ Incorrect Email
 Required Email
     [Tags]        attempt_login       rr_email
 
-    ${user}        Create Dictionary        password=abc123
+    ${user}        Create Dictionary        email=${EMPTY}    password=abc123
 
-    @{expected_alerts}    Create List
-    ...                   E-mail obrigatório
-    
     Go to Login Page
     Fill Input Password    ${user}
     Submit Credentials
-    Alert Spans Should Be    ${expected_alerts}
+    Alert span Should Be    E-mail obrigatório
 
 Required Password
     [Tags]        attempt_login        rr_password
 
-    ${user}        Create Dictionary        email=everton@404.com.br
-
-    @{expected_alerts}    Create List
-    ...                   Senha obrigatória
+    ${user}        Create Dictionary        email=everton@404.com.br    password=${EMPTY}
     
     Go to Login Page
     Fill Input Email    ${user}
     Submit Credentials
-    Alert Spans Should Be    ${expected_alerts}
+    Alert span Should Be    Senha obrigatória
 
 Required Fields
     [Tags]        attempt_login        rr_fields

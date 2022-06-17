@@ -45,3 +45,40 @@ Incorrect Email
     Fill Credentials    ${user}
     Submit Credentials
     Should Be Type Email
+
+Required Email
+    [Tags]        attempt_login       rr_email
+
+    ${user}        Create Dictionary        password=abc123
+
+    @{expected_alerts}    Create List
+    ...                   E-mail obrigatório
+    
+    Go to Login Page
+    Fill Input Password    ${user}
+    Submit Credentials
+    Alert Spans Should Be    ${expected_alerts}
+
+Required Password
+    [Tags]        attempt_login        rr_password
+
+    ${user}        Create Dictionary        email=everton@404.com.br
+
+    @{expected_alerts}    Create List
+    ...                   Senha obrigatória
+    
+    Go to Login Page
+    Fill Input Email    ${user}
+    Submit Credentials
+    Alert Spans Should Be    ${expected_alerts}
+
+Required Fields
+    [Tags]        attempt_login        rr_fields
+
+    @{expected_alerts}    Create List
+    ...                   E-mail obrigatório
+    ...                   Senha obrigatória
+
+    Go to Login Page
+    Submit Credentials
+    Alert Spans Should Be    ${expected_alerts}

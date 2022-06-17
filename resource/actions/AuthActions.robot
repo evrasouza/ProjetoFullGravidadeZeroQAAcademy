@@ -14,11 +14,20 @@ Go to Login Page
     Go To                      ${URL_BASE}
     Wait For Elements State    css=.login-form        visible    5
 
-Fill Credentials
-    [Arguments]        ${user}
+Fill Credentials        
+    [Arguments]             ${user}
+    Fill Input Email        ${user}
+    Fill Input Password     ${user}
 
-    Fill Text          ${INPUT_EMAIL}      ${user}[email]
-    Fill Text          ${INPUT_PASS}       ${user}[password]
+Fill Input Email
+    [Arguments]     ${user}
+    Fill Text       ${INPUT_EMAIL}      ${user}[email]
+
+Fill Input Password
+    [Arguments]     ${user}    
+    Fill Text       ${INPUT_PASS}       ${user}[password]
+
+
 
 Submit Credentials
     Click              css=.submit-button >> text=Entrar

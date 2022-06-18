@@ -31,7 +31,12 @@ Go To Geek Form
 Fill Geek Form
     [Arguments]        ${geek_profile}
 
-    Fill Text    id=whatsapp     ${geek_profile}[whats]
-    Fill Text    id=desc         ${geek_profile}[desc]
+    Fill Text          id=whatsapp     ${geek_profile}[whats]
+    Fill Text          id=desc         ${geek_profile}[desc]
+
+    Select Options By  id=printer_repair    value        ${geek_profile}[printer_repair]
+
+    Select Options By  id=work              text         ${geek_profile}[work]
+
     Fill Text    id=cost         ${geek_profile}[cost]
 

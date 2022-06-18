@@ -9,7 +9,7 @@ Test Teardown    Finish Session
 *** Test Cases ***
 User Login
 
-    ${user}                   Factory User Login
+    ${user}                   Factory User    login
     
     Go to Login Page
     Fill Credentials        ${user}

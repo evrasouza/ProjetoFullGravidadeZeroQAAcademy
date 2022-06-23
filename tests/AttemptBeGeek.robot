@@ -3,25 +3,23 @@ Documentation      AttemptBeGeek test suite
 
 Resource           ../resource/Base.robot
 
-Test Setup          Start Session For Attempt Be Geek
+Suite Setup         Start Session For Attempt Be Geek
+Test Template      Attempt Be a Geek
 
 *** Variables ***
 ${LONG_DESC}       Nada do que é social e humano é mais real que as utopias. Na sua vertente eutópica, as utopias constituíram sempre o fundamento simbólico e mítico sem o qual nenhuma forma de organização social se sustenta, justifica ou sobrevive. E criam, tanto na vertente eutópica como na distópica, o vocabulário da revolução e da mudança.
 
 *** Test Cases ***
-Should Not Be a Geek
-    [Template]      Attempt Be a Geek
-    
-    desc            ${LONG_DESC}          A descrição deve ter no máximo 255 caracteres
-    desc            Formato seu PC        A descrição deve ter no minimo 80 caracteres
-    desc            ${EMPTY}              Informe a descrição do seu trabalho
-    whats           11                    O Whatsapp deve ter 11 digitos contando com o DDD
-    whats           999999999             O Whatsapp deve ter 11 digitos contando com o DDD
-    whats           ${EMPTY}              O Whatsapp deve ter 11 digitos contando com o DDD
-    cost            aaaa                  Valor hora deve ser numérico 
-    cost            aa12                  Valor hora deve ser numérico 
-    cost            ^^%$                  Valor hora deve ser numérico 
-    cost            ${EMPTY}              Valor hora deve ser numérico 
+Long Desc            desc            ${LONG_DESC}          A descrição deve ter no máximo 255 caracteres
+Short Desc           desc            Formato seu PC        A descrição deve ter no minimo 80 caracteres
+Empty Desc           desc            ${EMPTY}              Informe a descrição do seu trabalho
+Whats Only DDD       whats           11                    O Whatsapp deve ter 11 digitos contando com o DDD
+Whats Only number    whats           999999999             O Whatsapp deve ter 11 digitos contando com o DDD
+Empty whats          whats           ${EMPTY}              O Whatsapp deve ter 11 digitos contando com o DDD
+Cost Letters         cost            aaaa                  Valor hora deve ser numérico 
+Cost Alpha           cost            aa12                  Valor hora deve ser numérico 
+Cost Special Chars   cost            ^^%$                  Valor hora deve ser numérico 
+Empty Cost           cost            ${EMPTY}              Valor hora deve ser numérico 
 
 *** Keywords ***
 Attempt Be a Geek

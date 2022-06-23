@@ -42,53 +42,13 @@ def factory_user(target):
                 'cost':'100'
             }
         },
-        'short_desc':{
-            'name': 'Peter',
-            'lastname': 'Jordan',
-            'email': 'peter@einerd.com',
-            'password': 'pwd123',
-            'geek_profile': {
-                'whats':'21981906757',
-                'desc':'Formato o seu PC',
-                'printer_repair':'Não',
-                'work':'Ambos',
-                'cost':'200'
-            }
-        },
-        'long_desc':{
-            'name': 'Rodrigo',
-            'lastname': 'Silva',
-            'email': 'rodrigo@arqueologo.com',
+        'attempt_be_geek':{
+            'name': 'Ronnie',
+            'lastname': 'Dio',
+            'email': 'ronnie@dio.com',
             'password': 'pwd123',
             'geek_profile': {
                 'whats':'17981906757',
-                'desc':'Nada do que é social e humano é mais real que as utopias. Na sua vertente eutópica, as utopias constituíram sempre o fundamento simbólico e mítico sem o qual nenhuma forma de organização social se sustenta, justifica ou sobrevive. E criam, tanto na vertente eutópica como na distópica, o vocabulário da revolução e da mudança.',
-                'printer_repair':'Não',
-                'work':'Ambos',
-                'cost':'200'
-            }
-        },
-        'empty_desc':{
-            'name': 'Pedro',
-            'lastname': 'Rafael',
-            'email': 'pedro@rafael.com',
-            'password': 'pwd123',
-            'geek_profile': {
-                'whats':'17981906757',
-                'desc':'',
-                'printer_repair':'Não',
-                'work':'Ambos',
-                'cost':'200'
-            }
-        }
-        ,
-        'empty_whats':{
-            'name': 'Pedro',
-            'lastname': 'Rafael',
-            'email': 'pedro@rafael.com',
-            'password': 'pwd123',
-            'geek_profile': {
-                'whats':'',
                 'desc':'Seu computador esta lento? Reiniciando do nada? Talvez seja um vírus, ou algum hardware com defeito. Posso fazer a manutenção no seu PC, formatando, reinstalando o SO, trocando algum componente físico porque não remover o baidu ou qualquer outro malware.',
                 'printer_repair':'Não',
                 'work':'Ambos',

@@ -2,7 +2,7 @@
 Documentation        Database Helpers
 
 Library        DatabaseLibrary
-Library    factories/User.py
+Library        factories/User.py
 
 Resource       ../resource/Database.robot
 
@@ -34,3 +34,6 @@ Users seed
 
     ${user2}        Factory User    be_geek
     Insert User    ${user2}
+
+    ${user3}        Factory User    short_desc
+    Insert User    ${user3}

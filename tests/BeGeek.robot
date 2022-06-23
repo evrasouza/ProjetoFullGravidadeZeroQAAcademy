@@ -19,3 +19,16 @@ Be a Geek
     Submit geek Form
     
     Geek Form should Be Sucess
+
+Short Description
+    [Tags]    short_desc
+    
+    ${user}        Factory User    short_desc
+
+    Do Login       ${user}
+
+    Go To Geek Form
+    Fill Geek Form    ${user}[geek_profile]
+    Submit geek Form
+    
+    Alert span Should Be    A descrição deve ter no minimo 80 caracteres

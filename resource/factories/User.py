@@ -55,6 +55,19 @@ def factory_user(target):
                 'cost':'200'
             }
         },
+        'long_desc':{
+            'name': 'Rodrigo',
+            'lastname': 'Silva',
+            'email': 'rodrigo@arqueologo.com',
+            'password': 'pwd123',
+            'geek_profile': {
+                'whats':'17981906757',
+                'desc':'Nada do que é social e humano é mais real que as utopias. Na sua vertente eutópica, as utopias constituíram sempre o fundamento simbólico e mítico sem o qual nenhuma forma de organização social se sustenta, justifica ou sobrevive. E criam, tanto na vertente eutópica como na distópica, o vocabulário da revolução e da mudança.',
+                'printer_repair':'Não',
+                'work':'Ambos',
+                'cost':'200'
+            }
+        }
     }
 
     return data[target]

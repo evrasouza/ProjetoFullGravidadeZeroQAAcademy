@@ -67,6 +67,33 @@ def factory_user(target):
                 'work':'Ambos',
                 'cost':'200'
             }
+        },
+        'empty_desc':{
+            'name': 'Pedro',
+            'lastname': 'Rafael',
+            'email': 'pedro@rafael.com',
+            'password': 'pwd123',
+            'geek_profile': {
+                'whats':'17981906757',
+                'desc':'',
+                'printer_repair':'Não',
+                'work':'Ambos',
+                'cost':'200'
+            }
+        }
+        ,
+        'empty_whats':{
+            'name': 'Pedro',
+            'lastname': 'Rafael',
+            'email': 'pedro@rafael.com',
+            'password': 'pwd123',
+            'geek_profile': {
+                'whats':'',
+                'desc':'Seu computador esta lento? Reiniciando do nada? Talvez seja um vírus, ou algum hardware com defeito. Posso fazer a manutenção no seu PC, formatando, reinstalando o SO, trocando algum componente físico porque não remover o baidu ou qualquer outro malware.',
+                'printer_repair':'Não',
+                'work':'Ambos',
+                'cost':'200'
+            }
         }
     }
 

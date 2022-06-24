@@ -11,6 +11,8 @@ Go To Geek Form
 Fill Geek Form
     [Arguments]        ${geek_profile}
 
+    Reset Geek Form
+
     Fill Text          id=whatsapp     ${geek_profile}[whats]
     Fill Text          id=desc         ${geek_profile}[desc]
 
@@ -27,3 +29,5 @@ Geek Form should Be Sucess
     ${expected_message}        Set Variable        Seu cadastro está na nossa lista de geeks. Agora é só ficar de olho no seu WhatsApp.
     Wait For Elements State    css=p >> text=${expected_message}    visible        5
 
+Reset Geek Form
+    Evaluate Javascript    css=.be-geek-form    document.getElementsByClassName("be-geek-form")[0].reset();

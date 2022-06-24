@@ -19,7 +19,9 @@ Empty whats          whats           ${EMPTY}              O Whatsapp deve ter 1
 Cost Letters         cost            aaaa                  Valor hora deve ser numérico 
 Cost Alpha           cost            aa12                  Valor hora deve ser numérico 
 Cost Special Chars   cost            ^^%$                  Valor hora deve ser numérico 
-Empty Cost           cost            ${EMPTY}              Valor hora deve ser numérico 
+Empty Cost           cost            ${EMPTY}              Valor hora deve ser numérico
+No Printer Repair    printer_repair  ${EMPTY}              Por Favor, informe se você é um Geek Supremo
+No work              work            ${EMPTY}              Por Favor, selecione o modelo de trabalho
 
 *** Keywords ***
 Attempt Be a Geek

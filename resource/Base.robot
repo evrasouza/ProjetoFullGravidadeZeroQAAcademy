@@ -17,7 +17,7 @@ ${URL_BASE}        https://getgeeks-evra.herokuapp.com
 
 *** Keywords ***
 Start Session
-    New Browser          chromium        headless=false        slowMo=00:00:00
+    New Browser          ${BROWSER}        headless=${HEADLESS}        slowMo=00:00:00
     New Page             ${URL_BASE}
 
     Set Viewport Size    1280    768

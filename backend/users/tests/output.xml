@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.9.5 on win32)" generated="20220627 06:09:39.534" rpa="false" schemaversion="3">
+<suite id="s1" name="Robot Interactive Console" source="c:\Users\win\.vscode\extensions\robocorp.robotframework-lsp-0.48.2\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
+<test id="s1-t1" name="Default Task/Test" line="5">
+<kw name="Interpreter Main Loop" library="MainLoop">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${payload}</var>
+<arg>email=kate@404.com.br</arg>
+<arg>password=pwd123</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220627 06:09:40.135" level="INFO">${payload} = {'email': 'kate@404.com.br', 'password': 'pwd123'}</msg>
+<status status="PASS" starttime="20220627 06:09:40.135" endtime="20220627 06:09:40.135"/>
+</kw>
+<kw name="POST">
+<var>${response}</var>
+<arg>${API_URL}/sessions</arg>
+<arg>json=${payload}</arg>
+<arg>expected_status=any</arg>
+<msg timestamp="20220627 06:09:40.136" level="FAIL">No keyword with name 'POST' found.</msg>
+<status status="FAIL" starttime="20220627 06:09:40.136" endtime="20220627 06:09:40.137"/>
+</kw>
+<kw name="Status Should Be">
+<arg>401</arg>
+<arg>${response}</arg>
+<status status="NOT RUN" starttime="20220627 06:09:40.138" endtime="20220627 06:09:40.139"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>Unauthorized</arg>
+<arg>${response.json()}[error]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" starttime="20220627 06:09:40.139" endtime="20220627 06:09:40.139"/>
+</kw>
+<status status="PASS" starttime="20220627 06:09:39.554" endtime="20220627 06:09:41.435"/>
+</kw>
+<status status="PASS" starttime="20220627 06:09:39.553" endtime="20220627 06:09:41.435"/>
+</test>
+<status status="PASS" starttime="20220627 06:09:39.536" endtime="20220627 06:09:41.436"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robot Interactive Console">Robot Interactive Console</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

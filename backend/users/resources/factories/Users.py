@@ -1,5 +1,12 @@
 
 
+def factory_new_user():
+    return {
+        'name': 'Clint Barton',
+        'email': 'clint@barton.com.bbr',
+        'password': 'pwd123'
+    }
+
 def factory_users_session(target):
     
     name = 'Paul Smith'

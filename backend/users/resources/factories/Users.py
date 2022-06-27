@@ -3,7 +3,7 @@
 def factory_new_user():
     return {
         'name': 'Clint Barton',
-        'email': 'clint@barton.com.bbr',
+        'email': 'clint@barton.com.br',
         'password': 'pwd123'
     }
 

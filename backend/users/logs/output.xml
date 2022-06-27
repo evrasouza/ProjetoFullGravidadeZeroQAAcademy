@@ -1,57 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0 (Python 3.9.5 on win32)" generated="20220627 19:12:34.309" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0 (Python 3.9.5 on win32)" generated="20220627 20:40:43.327" rpa="false" schemaversion="3">
 <suite id="s1" name="Users" source="C:\projects\ROBOT\GravidadeZero\project\backend\users\tests\Users.robot">
-<test id="s1-t1" name="Add New User" line="9">
+<test id="s1-t1" name="Add New User" line="10">
 <kw name="Factory New User" library="Users">
+<var>${user}</var>
+<msg timestamp="20220627 20:40:43.430" level="INFO">${user} = {'name': 'Clint Barton', 'email': 'clint@barton.com.br', 'password': 'pwd123'}</msg>
+<status status="PASS" starttime="20220627 20:40:43.430" endtime="20220627 20:40:43.430"/>
+</kw>
+<kw name="Remove User" library="Helpers">
+<arg>${user}</arg>
+<kw name="Create Dictionary" library="BuiltIn">
 <var>${payload}</var>
-<msg timestamp="20220627 19:12:34.407" level="INFO">${payload} = {'name': 'Clint Barton', 'email': 'clint@barton.com.bbr', 'password': 'pwd123'}</msg>
-<status status="PASS" starttime="20220627 19:12:34.407" endtime="20220627 19:12:34.407"/>
+<arg>email=${user}[email]</arg>
+<arg>password=${user}[password]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220627 20:40:43.431" level="INFO">${payload} = {'email': 'clint@barton.com.br', 'password': 'pwd123'}</msg>
+<status status="PASS" starttime="20220627 20:40:43.431" endtime="20220627 20:40:43.431"/>
+</kw>
+<kw name="POST Session" library="SessionsRoute">
+<var>${response}</var>
+<arg>${payload}</arg>
+<kw name="POST" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${API_URL}/sessions</arg>
+<arg>json=${payload}</arg>
+<arg>expected_status=any</arg>
+<doc>Sends a POST request.</doc>
+<msg timestamp="20220627 20:40:44.095" level="INFO">POST Request : url=https://getgeeks-users-evra.herokuapp.com/sessions 
+ path_url=/sessions 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '54', 'Content-Type': 'application/json'} 
+ body=b'{"email": "clint@barton.com.br", "password": "pwd123"}' 
+ </msg>
+<msg timestamp="20220627 20:40:44.095" level="INFO">POST Response : url=https://getgeeks-users-evra.herokuapp.com/sessions 
+ status=401, reason=Unauthorized 
+ headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '24', 'Etag': 'W/"18-XPDV80vbMk4yY1/PADG4jYM4rSI"', 'Date': 'Mon, 27 Jun 2022 23:40:44 GMT', 'Via': '1.1 vegur'} 
+ body={"error":"Unauthorized"} 
+ </msg>
+<msg timestamp="20220627 20:40:44.095" level="INFO">${response} = &lt;Response [401]&gt;</msg>
+<status status="PASS" starttime="20220627 20:40:43.431" endtime="20220627 20:40:44.095"/>
+</kw>
+<msg timestamp="20220627 20:40:44.096" level="INFO">${response} = &lt;Response [401]&gt;</msg>
+<status status="PASS" starttime="20220627 20:40:43.431" endtime="20220627 20:40:44.096"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;200&quot; in &quot;${response}&quot;">
+<kw name="Set Variable" library="BuiltIn">
+<var>${token}</var>
+<arg>Bearer ${response.json()}[token]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220627 20:40:44.096" endtime="20220627 20:40:44.096"/>
+</kw>
+<kw name="DELETE User" library="UsersRoute">
+<arg>${token}</arg>
+<status status="NOT RUN" starttime="20220627 20:40:44.096" endtime="20220627 20:40:44.096"/>
+</kw>
+<status status="NOT RUN" starttime="20220627 20:40:44.096" endtime="20220627 20:40:44.096"/>
+</branch>
+<status status="PASS" starttime="20220627 20:40:44.096" endtime="20220627 20:40:44.096"/>
+</if>
+<status status="PASS" starttime="20220627 20:40:43.430" endtime="20220627 20:40:44.096"/>
 </kw>
 <kw name="POST User" library="UsersRoute">
 <var>${response}</var>
-<arg>${payload}</arg>
+<arg>${user}</arg>
 <kw name="POST" library="RequestsLibrary">
 <var>${response}</var>
 <arg>${API_URL}/users</arg>
 <arg>json=${payload}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20220627 19:12:35.094" level="INFO">POST Request : url=https://getgeeks-users-evra.herokuapp.com/users 
+<msg timestamp="20220627 20:40:44.787" level="INFO">POST Request : url=https://getgeeks-users-evra.herokuapp.com/users 
  path_url=/users 
- headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '79', 'Content-Type': 'application/json'} 
- body=b'{"name": "Clint Barton", "email": "clint@barton.com.bbr", "password": "pwd123"}' 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '78', 'Content-Type': 'application/json'} 
+ body=b'{"name": "Clint Barton", "email": "clint@barton.com.br", "password": "pwd123"}' 
  </msg>
-<msg timestamp="20220627 19:12:35.094" level="INFO">POST Response : url=https://getgeeks-users-evra.herokuapp.com/users 
- status=400, reason=Bad Request 
- headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '31', 'Etag': 'W/"1f-lFUySNKwX3L5eGEwGcNcUoVKWhE"', 'Date': 'Mon, 27 Jun 2022 22:12:35 GMT', 'Via': '1.1 vegur'} 
- body={"error":"User already exists"} 
+<msg timestamp="20220627 20:40:44.787" level="INFO">POST Response : url=https://getgeeks-users-evra.herokuapp.com/users 
+ status=201, reason=Created 
+ headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '10', 'Etag': 'W/"a-ChM4pMk7R2Y5B+Hx643NAC3WHR4"', 'Date': 'Mon, 27 Jun 2022 23:40:44 GMT', 'Via': '1.1 vegur'} 
+ body={"id":506} 
  </msg>
-<msg timestamp="20220627 19:12:35.094" level="INFO">${response} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20220627 19:12:34.408" endtime="20220627 19:12:35.094"/>
+<msg timestamp="20220627 20:40:44.787" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220627 20:40:44.098" endtime="20220627 20:40:44.787"/>
 </kw>
-<msg timestamp="20220627 19:12:35.094" level="INFO">${response} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20220627 19:12:34.408" endtime="20220627 19:12:35.094"/>
+<msg timestamp="20220627 20:40:44.787" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220627 20:40:44.097" endtime="20220627 20:40:44.787"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>201</arg>
 <arg>${response}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<msg timestamp="20220627 19:12:35.095" level="FAIL">Url: https://getgeeks-users-evra.herokuapp.com/users Expected status: 400 != 201</msg>
-<status status="FAIL" starttime="20220627 19:12:35.095" endtime="20220627 19:12:35.096"/>
+<status status="PASS" starttime="20220627 20:40:44.788" endtime="20220627 20:40:44.788"/>
 </kw>
-<status status="FAIL" starttime="20220627 19:12:34.407" endtime="20220627 19:12:35.097">Url: https://getgeeks-users-evra.herokuapp.com/users Expected status: 400 != 201</status>
+<status status="PASS" starttime="20220627 20:40:43.429" endtime="20220627 20:40:44.789"/>
 </test>
 <doc>Session route test suite</doc>
-<status status="FAIL" starttime="20220627 19:12:34.310" endtime="20220627 19:12:35.098"/>
+<status status="PASS" starttime="20220627 20:40:43.329" endtime="20220627 20:40:44.791"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Users">Users</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Users">Users</stat>
 </suite>
 </statistics>
 <errors>

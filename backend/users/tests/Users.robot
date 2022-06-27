@@ -4,13 +4,14 @@ Documentation        Session route test suite
 Library              RequestsLibrary
 
 Resource             ../resources/Base.robot
+Resource             ../resources/Helpers.robot
 
 *** Test Cases ***
 Add New User
     
-    ${payload}        Factory New User
+    ${user}               Factory New User
 
-    ${response}       POST User         ${payload}
+    Remove User           ${user}
 
-    Status Should Be     201                   ${response}
-        
+    ${response}           POST User      ${user}
+    Status Should Be      201            ${response}     

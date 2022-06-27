@@ -13,3 +13,15 @@ POST User
     ...               expected_status=any
 
     [Return]          ${response}
+
+DELETE User
+    [Arguments]       ${token}
+
+    ${headers}        Create Dictionary        Authorization=${token}
+    
+    ${response}       DELETE
+    ...               ${API_URL}/users
+    ...               headers=${headers}
+    ...               expected_status=any
+
+    [Return]          ${response}

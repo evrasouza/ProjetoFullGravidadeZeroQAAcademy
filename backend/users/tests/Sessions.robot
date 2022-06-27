@@ -17,6 +17,11 @@ Resource             ../resources/Base.robot
 
 *** Test Cases ***
 User session
+
+    ${payload}        Create Dictionary    name=Kate Bishop    email=kate@hotmail.com.br    password=pwd123
+    POST User         ${payload}
+    
+
     ${payload}        Create Dictionary    email=kate@hotmail.com.br    password=pwd123
     #${headers}        Create Dictionary    Content-Type=application/json
 

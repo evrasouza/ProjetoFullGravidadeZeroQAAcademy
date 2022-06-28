@@ -7,6 +7,13 @@ def factory_new_user():
         'password': 'pwd123'
     }
 
+def factory_get_user():
+    return {
+        'name': 'Gwen Stacy',
+        'email': 'gwen@ozcorp.com.br',
+        'password': 'pwd123'
+    }
+
 def factory_users_session(target):
     
     name = 'Paul Smith'

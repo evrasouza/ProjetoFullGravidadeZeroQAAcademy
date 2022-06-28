@@ -58,3 +58,18 @@ def factory_users_session(target):
     }
 
     return data[target]
+
+def factory_be_geek():
+
+    return {
+        'name': 'Andreas Kissser',
+        'email': 'andreas@gmail.com',
+        'password': 'pwd123',
+        'geek_profile': {
+            'whatsapp': '19999999999',
+            'desc': 'Seu computador esta lento? Reiniciando do nada? Talvez seja um vírus, ou algum hardware com defeito. Posso fazer a manutenção no seu PC, formatando, reinstalando o SO, trocando algum componente físico porque não remover o baidu ou qualquer outro malware.',
+            'printer_repair': 'Sim',
+            'work': 'Presencial',
+            'cost': '199.99'
+        }
+    }

@@ -73,3 +73,11 @@ def factory_be_geek():
             'cost': '199.99'
         }
     }
+
+def factory_search_for_geeks():
+
+    return {
+        'name': 'Peter Quill',
+        'email': 'quill@marvel.com.br',
+        'password': 'pwd123',
+    }

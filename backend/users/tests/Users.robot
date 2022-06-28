@@ -33,3 +33,22 @@ Get User Data
     Should Be Equal As Strings    None              ${response.json()}[whatsapp]
     Should Be Equal As Strings    None              ${response.json()}[avatar]
     Should Be Equal As Strings    False             ${response.json()}[is_geek]
+
+Remove User
+    
+    # Dado que existe um usuario
+    ${user}               Factory Remove User
+    POST User             ${user}
+    
+    # E tenho um token desse usuario
+    ${token}              Get Token             ${user}
+    
+    # Quando faco uma solicitacao de remocao na rota /users
+    ${response}           DELETE User           ${token}
+    
+    # Entao deve retornar o status code 204 (no content)
+    Status Should Be      204                   ${response}
+
+    # E ao fazer uma requisicao GET, deve retornar o status code 404 (not found)
+    ${response}           GET User              ${token}
+    Status Should Be      404                   ${response}

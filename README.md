@@ -26,6 +26,8 @@
     https://nodejs.org/en/download/
 
 
+🧰 Para rodar Local - Utilizar Hyper com GitBash:<br>
+
    ⚡ Clonar projeto e instalar dependências<br>
 
     pip install -r requirements.txt
@@ -33,3 +35,11 @@
    ⚡ Inicializar a biblioteca Browser<br>
 
     rfbrowser init
+
+   ⚡ Para rodar testes backend estando na raiz do projeto <br>
+
+    chmod +x ./backend/run.sh
+
+   ⚡ Para rodar testes frontend estando na raiz do projeto<br>
+
+    chmod +x ./frontend/run.sh

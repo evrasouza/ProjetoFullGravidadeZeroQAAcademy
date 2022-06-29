@@ -29,3 +29,7 @@
    ⚡ Clonar projeto e instalar dependências<br>
 
     pip install -r requirements.txt
+
+   ⚡ Inicializar a biblioteca Browser<br>
+
+    rfbrowser init

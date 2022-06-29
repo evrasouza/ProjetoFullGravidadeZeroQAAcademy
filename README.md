@@ -24,3 +24,8 @@
    ⚡ NodeJs - Instalar versão 16x LTS<br>
 
     https://nodejs.org/en/download/
+
+
+   ⚡ Clonar projeto e instalar dependências<br>
+
+    pip install -r requirements.txt

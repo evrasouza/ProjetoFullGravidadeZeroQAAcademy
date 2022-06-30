@@ -9,6 +9,5 @@ Test Teardown    After Test
 *** Test Cases ***
 Search for Alien Geek
     
-    ${alien}        Factory User    search_alien
-
-    Get Token       ${alien}
+    ${alien}    Factory User        search_alien
+    Create Geek Profile Service     ${alien}

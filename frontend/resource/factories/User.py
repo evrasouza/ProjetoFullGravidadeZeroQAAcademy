@@ -64,20 +64,19 @@ def factory_user(target):
                 'cost':'200'
             }
         },
-        'search_alien':{
+        'search_alien': {
             'name': 'Dok',
             'lastname': 'Ock',
-            'email': 'dok@oscorp.com.br',
+            'email': 'dok@oscorp.com',
             'password': 'pwd123',
             'geek_profile': {
-                'whats':'54999999999',
-                'desc':'Faço conserto de qualquer impressora. Matricial a fiota, Matricial a fita colorida, a laser, a jato de tinta e também impressora 3D.',
-                'printer_repair':'Sim',
-                'work':'Presencial',
-                'cost':'299.58'
+                'whatsapp': '21999991001',
+                'desc': 'Faço conserto de qualquer impressora. Matricial a fita, Matricial a fita colorida, a laser, a jato de tinta e também impressora 3D.',
+                'printer_repair': 'Sim',
+                'work': 'Presencial',
+                'cost': '250'
             }
-        }
-        ,
+        },
         'search_commom':{
             'name': 'Peter',
             'lastname': 'Parker',

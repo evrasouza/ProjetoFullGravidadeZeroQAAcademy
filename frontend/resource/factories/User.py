@@ -11,7 +11,9 @@ def users_to_insert_db():
     return [
         factory_user('login'),
         factory_user('be_geek'),
-        factory_user('attempt_be_geek')
+        factory_user('attempt_be_geek'),
+        factory_user('search_alien'),
+        factory_user('search_commom')
     ]
 
 def factory_user(target):
@@ -60,6 +62,33 @@ def factory_user(target):
                 'printer_repair':'Não',
                 'work':'Ambos',
                 'cost':'200'
+            }
+        },
+        'search_alien':{
+            'name': 'Dok',
+            'lastname': 'Ock',
+            'email': 'dok@oscorp.com.br',
+            'password': 'pwd123',
+            'geek_profile': {
+                'whats':'54999999999',
+                'desc':'Faço conserto de qualquer impressora. Matricial a fiota, Matricial a fita colorida, a laser, a jato de tinta e também impressora 3D.',
+                'printer_repair':'Sim',
+                'work':'Presencial',
+                'cost':'299.58'
+            }
+        }
+        ,
+        'search_commom':{
+            'name': 'Peter',
+            'lastname': 'Parker',
+            'email': 'parker@oscorp.com.br',
+            'password': 'pwd123',
+            'geek_profile': {
+                'whats':'76999999922',
+                'desc':'Faço conserto de qualquer impressora. Matricial a fiota, Matricial a fita colorida, a laser, a jato de tinta e também impressora 3D.',
+                'printer_repair':'Não',
+                'work':'Remoto',
+                'cost':'99.43'
             }
         }
     }

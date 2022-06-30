@@ -21,3 +21,28 @@ Search for Alien Geek
 
     Geek Should Be Found            ${alien}
     Alien Icon Should Be Visible
+
+Search for Common Geek
+    [Tags]        commom
+
+    ${common}    Factory User       search_commom
+    Create Geek Profile Service     ${common}
+
+    ${searcher}     Factory User    searcher
+    Do Login        ${searcher}
+
+    Go To Geeks
+    Fill Search Form        Não     PC X86 ou X64
+    Submit Search Form
+
+    Geek Should Be Found            ${common}
+
+Search not found
+
+    ${searcher}     Factory User    searcher
+    Do Login        ${searcher}
+
+    Go To Geeks
+    Fill Search Form        Não     Conserto Game Atari da Polivox
+    Submit Search Form
+    Geek Not Found  

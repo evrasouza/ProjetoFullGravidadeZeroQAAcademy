@@ -90,8 +90,8 @@ def factory_user(target):
             'email': 'parker@oscorp.com.br',
             'password': 'pwd123',
             'geek_profile': {
-                'whats':'76999999922',
-                'desc':'Faço conserto de qualquer impressora. Matricial a fiota, Matricial a fita colorida, a laser, a jato de tinta e também impressora 3D.',
+                'whatsapp':'76999999922',
+                'desc':'Faço instalação de distribuições Linux no seu computador PC X86 ou X64 com processadores Intel ou AMD. Pode ser Linux Debian, Ubuntu, Mint, Fedora etc...',
                 'printer_repair':'Não',
                 'work':'Remoto',
                 'cost':'99.43'

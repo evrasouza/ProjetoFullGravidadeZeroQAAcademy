@@ -71,4 +71,9 @@ Geek Should Be Found
 
 Alien Icon Should Be Visible
     Get Text        ${target_geek}   contains        👽
+
+Geek Not Found
+
+    Wait For Elements State     css=.search-not-found p >> text=Não encontramos Geeks com o(s) termo(s) informado na busca!
+    ...                         visible     5
     

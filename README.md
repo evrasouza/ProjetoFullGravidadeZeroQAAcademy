@@ -35,11 +35,3 @@
    ⚡ Inicializar a biblioteca Browser<br>
 
     rfbrowser init
-
-   ⚡ Para rodar testes backend estando na raiz do projeto <br>
-
-    chmod +x ./backend/run.sh
-
-   ⚡ Para rodar testes frontend estando na raiz do projeto<br>
-
-    chmod +x ./frontend/run.sh

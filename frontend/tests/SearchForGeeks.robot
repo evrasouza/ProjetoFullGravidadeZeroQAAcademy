@@ -18,3 +18,6 @@ Search for Alien Geek
     Go To Geeks
     Fill Search Form        Sim     Matricial a fita colorida
     Submit Search Form
+
+    Geek Should Be Found            ${alien}
+    Alien Icon Should Be Visible

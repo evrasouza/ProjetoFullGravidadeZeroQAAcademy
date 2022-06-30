@@ -53,4 +53,22 @@ Geek Form should Be Sucess
 
 Reset Geek Form
     Evaluate Javascript    css=.be-geek-form    document.getElementsByClassName("be-geek-form")[0].reset();
+
+Geek Should Be Found
+    [Arguments]         ${geek}
+
+    ${full_name}    Set Variable        ${geek}[name] ${geek}[lastname]
+
+    ${target_geek}       Get Element    xpath=//strong[contains(text(), "${full_name}")]/../../..
+
+    ${work}             Convert To Lower Case        ${geek}[geek_profile][work]
+
+    Get Text        ${target_geek}   contains        Atendimento ${work}
+    Get Text        ${target_geek}   contains        ${geek}[geek_profile][desc]
+    Get Text        ${target_geek}   contains        ${geek}[geek_profile][cost]
+
+    Set Suite Variable      ${target_geek}
+
+Alien Icon Should Be Visible
+    Get Text        ${target_geek}   contains        👽
     

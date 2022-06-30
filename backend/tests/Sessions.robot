@@ -2,7 +2,6 @@
 Documentation        Session route test suite
 
 Library              RequestsLibrary
-Library              String
 
 Resource             ../resources/Base.robot
 

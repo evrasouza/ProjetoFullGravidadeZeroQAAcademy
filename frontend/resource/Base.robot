@@ -12,6 +12,7 @@ Resource   actions/SignupActions.robot
 
 Resource    Database.robot
 Resource    Helpers.robot
+Resource    Services.robot
 
 *** Variables ***
 ${URL_BASE}        https://getgeeks-evra.herokuapp.com

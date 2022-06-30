@@ -14,3 +14,7 @@ Search for Alien Geek
 
     ${searcher}    Factory User    searcher
     Do Login       ${searcher}
+
+    Go To Geeks
+    Fill Search Form        Sim     Matricial a fita colorida
+    Submit Search Form

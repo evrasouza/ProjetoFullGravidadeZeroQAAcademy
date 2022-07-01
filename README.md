@@ -35,3 +35,13 @@
    ⚡ Inicializar a biblioteca Browser<br>
 
     rfbrowser init
+
+   ⚡ Para rodar projeto Backend<br>
+
+    cd backend
+    ./run.sh
+
+   ⚡ Para rodar projeto Frontend<br>
+
+    cd frontend
+    ./run.sh

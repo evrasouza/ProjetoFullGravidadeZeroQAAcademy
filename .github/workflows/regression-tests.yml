@@ -87,3 +87,4 @@ jobs:
         name: Web Test Result
         path: frontend/logs/xunit.xml
         reporter: java-junit
+        
